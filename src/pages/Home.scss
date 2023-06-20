@@ -1,0 +1,52 @@
+@use "../styles/partials/variables" as *;
+@use "../styles/partials/mixin" as *;
+
+:root {
+  --background-color: rgb(6, 11, 25);
+  --border-color: rgb(255, 225, 255, 0.1);
+}
+
+body {
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+p,
+span {
+  color: white;
+}
+
+.nav {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid var(--border-color);
+  flex-direction: row;
+
+  &__section {
+    padding: 3rem 2rem;
+    display: flex;
+    gap: 1rem;
+    border-left: 1px solid var(--border-color);
+    align-items: center;
+    justify-content: center;
+  }
+}
