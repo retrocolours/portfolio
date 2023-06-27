@@ -1,6 +1,9 @@
 @use "../styles/partials/variables" as *;
 @use "../styles/partials/mixin" as *;
 
+// @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+
 :root {
   --background-color: rgb(6, 11, 25);
   --border-color: rgb(255, 225, 255, 0.1);
@@ -49,4 +52,19 @@ span {
     align-items: center;
     justify-content: center;
   }
+}
+
+#logo {
+  justify-content: flex-start;
+  font-size: 2rem;
+  // font-family: 'Alex Brush', cursive;
+  font-family: "Great Vibes", cursive;
+}
+
+#link {
+  gap: 6rem;
+}
+
+#social {
+  gap: 3rem;
 }
