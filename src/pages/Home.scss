@@ -68,3 +68,59 @@ span {
 #social {
   gap: 3rem;
 }
+
+.main {
+  flex-grow: 1;
+  position: relative;
+  > article[data-status="inactive"] {
+    transform: translateX(-100%);
+    transition: none;
+  }
+
+  > article[data-status="active"] {
+    transform: translateX(0%);
+  }
+
+  > article[data-status="before"] {
+    transform: translateX(-100%);
+  }
+
+  > article[data-status="after"] {
+    transform: translateX(100%);
+  }
+
+  > article[data-status="becoming-active-from-before"],
+  > article[data-status="becoming-active-from-after"] {
+    transform: translateX(-100%);
+    transition: none;
+  }
+}
+
+.article {
+  display: grid;
+  height: 100%;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 2fr 1fr;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  transition: transform 400ms ease;
+
+  &__section {
+    height: 100%;
+  }
+
+  &__section--description,
+  &__section--nav {
+    border-left: 1px solid var(--border-color);
+  }
+
+  &__section--title,
+  &__section--nav {
+    border-top: 1px solid var(--border-color);
+  }
+
+  &__button {
+    background: transparent;
+  }
+}

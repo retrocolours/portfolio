@@ -2,13 +2,16 @@
 import "./Home.scss";
 import { PiLinkedinLogo } from "react-icons/pi";
 import { VscGithub } from "react-icons/vsc";
+import { PiArrowBendUpLeftDuotone } from "react-icons/pi";
+import { PiArrowBendUpRightDuotone } from "react-icons/pi";
 
 function Home() {
-  //   const [count, setCount] = useState(0)
-
-  //   useEffect(() => {
-  //     console.log('useEffect')
-  //   }, [count])
+  const handleLeftClick = () => {
+    console.log("left button clicked");
+  };
+  const handleRightClick = () => {
+    console.log("right button clicked");
+  };
 
   return (
     <>
@@ -38,6 +41,100 @@ function Home() {
           <a href="#">Menu</a>
         </div>
       </nav>
+      <main className="main">
+        <article className="article" data-index="0" data-status="active">
+          <div className="article__section article__section--image">Hello</div>
+          <div className="article__section article__section--description">
+            hello
+          </div>
+          <div className="article__section article__section--title">hello</div>
+          <div className="article__section article__section--nav">
+            <button
+              className="article__button"
+              type="button"
+              onClick={() => handleLeftClick()}
+            >
+              <PiArrowBendUpLeftDuotone size={24} />
+            </button>
+            <button
+              className="article__button"
+              type="button"
+              onClick={() => handleRightClick()}
+            >
+              <PiArrowBendUpRightDuotone size={24} />
+            </button>
+          </div>
+        </article>
+        <article className="article" data-index="1" data-status="inactive">
+          <div className="article__section article__section--image">Hello</div>
+          <div className="article__section article__section--description">
+            hello
+          </div>
+          <div className="article__section article__section--title">hello</div>
+          <div className="article__section article__section--nav">
+            <button
+              className="article__button"
+              type="button"
+              onClick={() => handleLeftClick()}
+            >
+              <PiArrowBendUpLeftDuotone size={24} />
+            </button>
+            <button
+              className="article__button"
+              type="button"
+              onClick={() => handleRightClick()}
+            >
+              <PiArrowBendUpRightDuotone size={24} />
+            </button>
+          </div>
+        </article>
+        <article className="article" data-index="2" data-status="inactive">
+          <div className="article__section article__section--image">Hello</div>
+          <div className="article__section article__section--description">
+            hello
+          </div>
+          <div className="article__section article__section--title">hello</div>
+          <div className="article__section article__section--nav">
+            <button
+              className="article__button"
+              type="button"
+              onClick={() => handleLeftClick()}
+            >
+              <PiArrowBendUpLeftDuotone size={24} />
+            </button>
+            <button
+              className="article__button"
+              type="button"
+              onClick={() => handleRightClick()}
+            >
+              <PiArrowBendUpRightDuotone size={24} />
+            </button>
+          </div>
+        </article>
+        <article className="article" data-index="3" data-status="inactive">
+          <div className="article__section article__section--image">Hello</div>
+          <div className="article__section article__section--description">
+            hello
+          </div>
+          <div className="article__section article__section--title">hello</div>
+          <div className="article__section article__section--nav">
+            <button
+              className="article__button"
+              type="button"
+              onClick={() => handleLeftClick()}
+            >
+              <PiArrowBendUpLeftDuotone size={24} />
+            </button>
+            <button
+              className="article__button"
+              type="button"
+              onClick={() => handleRightClick()}
+            >
+              <PiArrowBendUpRightDuotone size={24} />
+            </button>
+          </div>
+        </article>
+      </main>
     </>
   );
 }
