@@ -122,5 +122,12 @@ span {
 
   &__button {
     background: transparent;
+    color: white;
+  }
+
+  &__image {
+    background-image: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 }

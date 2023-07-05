@@ -4,6 +4,7 @@ import { PiLinkedinLogo } from "react-icons/pi";
 import { VscGithub } from "react-icons/vsc";
 import { PiArrowBendUpLeftDuotone } from "react-icons/pi";
 import { PiArrowBendUpRightDuotone } from "react-icons/pi";
+import test from "../assets/test.jpg";
 
 function Home() {
   const handleLeftClick = () => {
@@ -41,13 +42,24 @@ function Home() {
           <a href="#">Menu</a>
         </div>
       </nav>
+
       <main className="main">
         <article className="article" data-index="0" data-status="active">
-          <div className="article__section article__section--image">Hello</div>
+          <div className="article__section article__section--image">
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+            quae ab illo inventore veritatis et quasi architecto beatae vitae
+            dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
+            aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
+            eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est,
+            qui dolorem ipsum quia dolor sit amet, consectetur
+          </div>
           <div className="article__section article__section--description">
             hello
           </div>
-          <div className="article__section article__section--title">hello</div>
+          <div className="article__section article__section--title">
+            <img className="article__image" src={test} />
+          </div>
           <div className="article__section article__section--nav">
             <button
               className="article__button"
@@ -65,6 +77,7 @@ function Home() {
             </button>
           </div>
         </article>
+
         <article className="article" data-index="1" data-status="inactive">
           <div className="article__section article__section--image">Hello</div>
           <div className="article__section article__section--description">
@@ -88,6 +101,7 @@ function Home() {
             </button>
           </div>
         </article>
+
         <article className="article" data-index="2" data-status="inactive">
           <div className="article__section article__section--image">Hello</div>
           <div className="article__section article__section--description">
@@ -111,6 +125,7 @@ function Home() {
             </button>
           </div>
         </article>
+
         <article className="article" data-index="3" data-status="inactive">
           <div className="article__section article__section--image">Hello</div>
           <div className="article__section article__section--description">
