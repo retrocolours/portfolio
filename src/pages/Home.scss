@@ -86,7 +86,7 @@ span {
   }
 
   > article[data-status="after"] {
-    transform: translateX(100%) scale(0);
+    transform: translateX(100%);
   }
 
   > article[data-status="becoming-active-from-before"],

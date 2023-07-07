@@ -11,26 +11,13 @@ import testfour from "../assets/testfour.jpg";
 
 function Home() {
   const [activeIndex, setActiveIndex] = useState(0);
-
-  const handleLeftClick = () => {
-    const prevIndex =
-      activeIndex - 1 >= 0 ? activeIndex - 1 : groups.length - 1;
-    setActiveIndex(prevIndex);
-  };
-
-  const handleRightClick = () => {
-    const nextIndex =
-      activeIndex + 1 <= groups.length - 1 ? activeIndex + 1 : 0;
-    setActiveIndex(nextIndex);
-  };
-
-  const groups = [
+  const [groups, setGroups] = useState([
     {
       index: 0,
       status: "active",
       content: {
         image:
-          "Sed ut perspiciatis unde omnis iste natus error sit voluptatem...",
+          "1 Sed ut perspiciatis unde omnis iste natus error sit voluptatem...",
         description: "hello",
         imageSrc: test,
       },
@@ -39,7 +26,7 @@ function Home() {
       index: 1,
       status: "after",
       content: {
-        image: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+        image: "2 Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
         description: "world",
         imageSrc: testtwo,
       },
@@ -48,7 +35,7 @@ function Home() {
       index: 2,
       status: "after",
       content: {
-        image: "Duis aute irure dolor in reprehenderit in voluptate velit...",
+        image: "3 Duis aute irure dolor in reprehenderit in voluptate velit...",
         description: "foo",
         imageSrc: testthree,
       },
@@ -62,7 +49,39 @@ function Home() {
         imageSrc: testfour,
       },
     },
-  ];
+  ]);
+
+  const handleLeftClick = () => {
+    const prevIndex =
+      activeIndex - 1 >= 0 ? activeIndex - 1 : groups.length - 1;
+    setActiveIndex(prevIndex);
+    setGroups(
+      groups.map((group, index) => {
+        if (index === prevIndex) {
+          return { ...group, status: "active" };
+        } else if (index === activeIndex) {
+          return { ...group, status: "after" };
+        }
+        return group;
+      })
+    );
+  };
+
+  const handleRightClick = () => {
+    const nextIndex =
+      activeIndex + 1 <= groups.length - 1 ? activeIndex + 1 : 0;
+    setActiveIndex(nextIndex);
+    setGroups(
+      groups.map((group, index) => {
+        if (index === nextIndex) {
+          return { ...group, status: "active" };
+        } else if (index === activeIndex) {
+          return { ...group, status: "before" };
+        }
+        return group;
+      })
+    );
+  };
 
   return (
     <>
@@ -99,7 +118,7 @@ function Home() {
             className="article"
             key={group.index}
             data-index={group.index}
-            data-status={group.index === activeIndex ? "active" : "after"}
+            data-status={group.status}
           >
             <div className="article__section article__section--image">
               {group.content.image}
@@ -115,6 +134,7 @@ function Home() {
                 className="article__button"
                 type="button"
                 onClick={handleLeftClick}
+                disabled={activeIndex === 0}
               >
                 <PiArrowBendUpLeftDuotone size={24} />
               </button>
@@ -122,111 +142,7 @@ function Home() {
                 className="article__button"
                 type="button"
                 onClick={handleRightClick}
-              >
-                <PiArrowBendUpRightDuotone size={24} />
-              </button>
-            </div>
-          </article>
-        ))}
-
-        {groups.map((group) => (
-          <article
-            className="article"
-            key={group.index}
-            data-index={group.index}
-            data-status={group.index === activeIndex ? "active" : "after"}
-          >
-            <div className="article__section article__section--image">
-              {group.content.image}
-            </div>
-            <div className="article__section article__section--description">
-              {group.content.description}
-            </div>
-            <div className="article__section article__section--title">
-              <img className="article__image" src={group.content.imageSrc} />
-            </div>
-            <div className="article__section article__section--nav">
-              <button
-                className="article__button"
-                type="button"
-                onClick={handleLeftClick}
-              >
-                <PiArrowBendUpLeftDuotone size={24} />
-              </button>
-              <button
-                className="article__button"
-                type="button"
-                onClick={handleRightClick}
-              >
-                <PiArrowBendUpRightDuotone size={24} />
-              </button>
-            </div>
-          </article>
-        ))}
-
-        {groups.map((group) => (
-          <article
-            className="article"
-            key={group.index}
-            data-index={group.index}
-            data-status={group.index === activeIndex ? "active" : "after"}
-          >
-            <div className="article__section article__section--image">
-              {group.content.image}
-            </div>
-            <div className="article__section article__section--description">
-              {group.content.description}
-            </div>
-            <div className="article__section article__section--title">
-              <img className="article__image" src={group.content.imageSrc} />
-            </div>
-            <div className="article__section article__section--nav">
-              <button
-                className="article__button"
-                type="button"
-                onClick={handleLeftClick}
-              >
-                <PiArrowBendUpLeftDuotone size={24} />
-              </button>
-              <button
-                className="article__button"
-                type="button"
-                onClick={handleRightClick}
-              >
-                <PiArrowBendUpRightDuotone size={24} />
-              </button>
-            </div>
-          </article>
-        ))}
-
-        {groups.map((group) => (
-          <article
-            className="article"
-            key={group.index}
-            data-index={group.index}
-            data-status={group.index === activeIndex ? "active" : "after"}
-          >
-            <div className="article__section article__section--image">
-              {group.content.image}
-            </div>
-            <div className="article__section article__section--description">
-              {group.content.description}
-            </div>
-            <div className="article__section article__section--title">
-              <img className="article__image" src={group.content.imageSrc} />
-            </div>
-            <div className="article__section article__section--nav">
-              <button
-                className="article__button"
-                type="button"
-                onClick={handleLeftClick}
-              >
-                <PiArrowBendUpLeftDuotone size={24} />
-              </button>
-              <button
-                className="article__button"
-                type="button"
-                onClick={handleRightClick}
+                disabled={activeIndex === groups.length - 1}
               >
                 <PiArrowBendUpRightDuotone size={24} />
               </button>
