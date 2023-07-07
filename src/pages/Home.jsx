@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Home.scss";
 import { PiLinkedinLogo } from "react-icons/pi";
 import { VscGithub } from "react-icons/vsc";
@@ -58,7 +58,7 @@ function Home() {
     setGroups(
       groups.map((group, index) => {
         if (index === prevIndex) {
-          return { ...group, status: "active" };
+          return { ...group, status: "becoming-active-from-before" };
         } else if (index === activeIndex) {
           return { ...group, status: "after" };
         }
@@ -74,7 +74,7 @@ function Home() {
     setGroups(
       groups.map((group, index) => {
         if (index === nextIndex) {
-          return { ...group, status: "active" };
+          return { ...group, status: "becoming-active-from-after" };
         } else if (index === activeIndex) {
           return { ...group, status: "before" };
         }
@@ -82,6 +82,20 @@ function Home() {
       })
     );
   };
+
+  useEffect(() => {
+    setGroups((prevGroups) =>
+      prevGroups.map((group) => {
+        if (
+          group.status === "becoming-active-from-after" ||
+          group.status === "becoming-active-from-before"
+        ) {
+          return { ...group, status: "active" };
+        }
+        return group;
+      })
+    );
+  }, [activeIndex]);
 
   return (
     <>
@@ -134,7 +148,6 @@ function Home() {
                 className="article__button"
                 type="button"
                 onClick={handleLeftClick}
-                disabled={activeIndex === 0}
               >
                 <PiArrowBendUpLeftDuotone size={24} />
               </button>
@@ -142,7 +155,6 @@ function Home() {
                 className="article__button"
                 type="button"
                 onClick={handleRightClick}
-                disabled={activeIndex === groups.length - 1}
               >
                 <PiArrowBendUpRightDuotone size={24} />
               </button>
