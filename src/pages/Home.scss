@@ -86,7 +86,7 @@ span {
   }
 
   > article[data-status="after"] {
-    transform: translateX(100%);
+    transform: translateX(100%) scale(0);
   }
 
   > article[data-status="becoming-active-from-before"],
@@ -123,11 +123,13 @@ span {
   &__button {
     background: transparent;
     color: white;
+    cursor: pointer;
   }
 
   &__image {
     background-image: center;
     background-repeat: no-repeat;
     background-size: cover;
+    width: 50%;
   }
 }

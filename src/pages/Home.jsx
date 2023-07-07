@@ -1,18 +1,68 @@
-// import { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Home.scss";
 import { PiLinkedinLogo } from "react-icons/pi";
 import { VscGithub } from "react-icons/vsc";
 import { PiArrowBendUpLeftDuotone } from "react-icons/pi";
 import { PiArrowBendUpRightDuotone } from "react-icons/pi";
 import test from "../assets/test.jpg";
+import testtwo from "../assets/testtwo.jpg";
+import testthree from "../assets/testthree.jpg";
+import testfour from "../assets/testfour.jpg";
 
 function Home() {
+  const [activeIndex, setActiveIndex] = useState(0);
+
   const handleLeftClick = () => {
-    console.log("left button clicked");
+    const prevIndex =
+      activeIndex - 1 >= 0 ? activeIndex - 1 : groups.length - 1;
+    setActiveIndex(prevIndex);
   };
+
   const handleRightClick = () => {
-    console.log("right button clicked");
+    const nextIndex =
+      activeIndex + 1 <= groups.length - 1 ? activeIndex + 1 : 0;
+    setActiveIndex(nextIndex);
   };
+
+  const groups = [
+    {
+      index: 0,
+      status: "active",
+      content: {
+        image:
+          "Sed ut perspiciatis unde omnis iste natus error sit voluptatem...",
+        description: "hello",
+        imageSrc: test,
+      },
+    },
+    {
+      index: 1,
+      status: "after",
+      content: {
+        image: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+        description: "world",
+        imageSrc: testtwo,
+      },
+    },
+    {
+      index: 2,
+      status: "after",
+      content: {
+        image: "Duis aute irure dolor in reprehenderit in voluptate velit...",
+        description: "foo",
+        imageSrc: testthree,
+      },
+    },
+    {
+      index: 3,
+      status: "after",
+      content: {
+        image: "Excepteur sint occaecat cupidatat non proident...",
+        description: "bar",
+        imageSrc: testfour,
+      },
+    },
+  ];
 
   return (
     <>
@@ -44,111 +94,145 @@ function Home() {
       </nav>
 
       <main className="main">
-        <article className="article" data-index="0" data-status="active">
-          <div className="article__section article__section--image">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-            quae ab illo inventore veritatis et quasi architecto beatae vitae
-            dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-            aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
-            eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est,
-            qui dolorem ipsum quia dolor sit amet, consectetur
-          </div>
-          <div className="article__section article__section--description">
-            hello
-          </div>
-          <div className="article__section article__section--title">
-            <img className="article__image" src={test} />
-          </div>
-          <div className="article__section article__section--nav">
-            <button
-              className="article__button"
-              type="button"
-              onClick={() => handleLeftClick()}
-            >
-              <PiArrowBendUpLeftDuotone size={24} />
-            </button>
-            <button
-              className="article__button"
-              type="button"
-              onClick={() => handleRightClick()}
-            >
-              <PiArrowBendUpRightDuotone size={24} />
-            </button>
-          </div>
-        </article>
+        {groups.map((group) => (
+          <article
+            className="article"
+            key={group.index}
+            data-index={group.index}
+            data-status={group.index === activeIndex ? "active" : "after"}
+          >
+            <div className="article__section article__section--image">
+              {group.content.image}
+            </div>
+            <div className="article__section article__section--description">
+              {group.content.description}
+            </div>
+            <div className="article__section article__section--title">
+              <img className="article__image" src={group.content.imageSrc} />
+            </div>
+            <div className="article__section article__section--nav">
+              <button
+                className="article__button"
+                type="button"
+                onClick={handleLeftClick}
+              >
+                <PiArrowBendUpLeftDuotone size={24} />
+              </button>
+              <button
+                className="article__button"
+                type="button"
+                onClick={handleRightClick}
+              >
+                <PiArrowBendUpRightDuotone size={24} />
+              </button>
+            </div>
+          </article>
+        ))}
 
-        <article className="article" data-index="1" data-status="inactive">
-          <div className="article__section article__section--image">Hello</div>
-          <div className="article__section article__section--description">
-            hello
-          </div>
-          <div className="article__section article__section--title">hello</div>
-          <div className="article__section article__section--nav">
-            <button
-              className="article__button"
-              type="button"
-              onClick={() => handleLeftClick()}
-            >
-              <PiArrowBendUpLeftDuotone size={24} />
-            </button>
-            <button
-              className="article__button"
-              type="button"
-              onClick={() => handleRightClick()}
-            >
-              <PiArrowBendUpRightDuotone size={24} />
-            </button>
-          </div>
-        </article>
+        {groups.map((group) => (
+          <article
+            className="article"
+            key={group.index}
+            data-index={group.index}
+            data-status={group.index === activeIndex ? "active" : "after"}
+          >
+            <div className="article__section article__section--image">
+              {group.content.image}
+            </div>
+            <div className="article__section article__section--description">
+              {group.content.description}
+            </div>
+            <div className="article__section article__section--title">
+              <img className="article__image" src={group.content.imageSrc} />
+            </div>
+            <div className="article__section article__section--nav">
+              <button
+                className="article__button"
+                type="button"
+                onClick={handleLeftClick}
+              >
+                <PiArrowBendUpLeftDuotone size={24} />
+              </button>
+              <button
+                className="article__button"
+                type="button"
+                onClick={handleRightClick}
+              >
+                <PiArrowBendUpRightDuotone size={24} />
+              </button>
+            </div>
+          </article>
+        ))}
 
-        <article className="article" data-index="2" data-status="inactive">
-          <div className="article__section article__section--image">Hello</div>
-          <div className="article__section article__section--description">
-            hello
-          </div>
-          <div className="article__section article__section--title">hello</div>
-          <div className="article__section article__section--nav">
-            <button
-              className="article__button"
-              type="button"
-              onClick={() => handleLeftClick()}
-            >
-              <PiArrowBendUpLeftDuotone size={24} />
-            </button>
-            <button
-              className="article__button"
-              type="button"
-              onClick={() => handleRightClick()}
-            >
-              <PiArrowBendUpRightDuotone size={24} />
-            </button>
-          </div>
-        </article>
+        {groups.map((group) => (
+          <article
+            className="article"
+            key={group.index}
+            data-index={group.index}
+            data-status={group.index === activeIndex ? "active" : "after"}
+          >
+            <div className="article__section article__section--image">
+              {group.content.image}
+            </div>
+            <div className="article__section article__section--description">
+              {group.content.description}
+            </div>
+            <div className="article__section article__section--title">
+              <img className="article__image" src={group.content.imageSrc} />
+            </div>
+            <div className="article__section article__section--nav">
+              <button
+                className="article__button"
+                type="button"
+                onClick={handleLeftClick}
+              >
+                <PiArrowBendUpLeftDuotone size={24} />
+              </button>
+              <button
+                className="article__button"
+                type="button"
+                onClick={handleRightClick}
+              >
+                <PiArrowBendUpRightDuotone size={24} />
+              </button>
+            </div>
+          </article>
+        ))}
 
-        <article className="article" data-index="3" data-status="inactive">
-          <div className="article__section article__section--image">Hello</div>
-          <div className="article__section article__section--description">
-            hello
-          </div>
-          <div className="article__section article__section--title">hello</div>
-          <div className="article__section article__section--nav">
-            <button
-              className="article__button"
-              type="button"
-              onClick={() => handleLeftClick()}
-            >
-              <PiArrowBendUpLeftDuotone size={24} />
-            </button>
-            <button
-              className="article__button"
-              type="button"
-              onClick={() => handleRightClick()}
-            >
-              <PiArrowBendUpRightDuotone size={24} />
-            </button>
-          </div>
-        </article>
+        {groups.map((group) => (
+          <article
+            className="article"
+            key={group.index}
+            data-index={group.index}
+            data-status={group.index === activeIndex ? "active" : "after"}
+          >
+            <div className="article__section article__section--image">
+              {group.content.image}
+            </div>
+            <div className="article__section article__section--description">
+              {group.content.description}
+            </div>
+            <div className="article__section article__section--title">
+              <img className="article__image" src={group.content.imageSrc} />
+            </div>
+            <div className="article__section article__section--nav">
+              <button
+                className="article__button"
+                type="button"
+                onClick={handleLeftClick}
+              >
+                <PiArrowBendUpLeftDuotone size={24} />
+              </button>
+              <button
+                className="article__button"
+                type="button"
+                onClick={handleRightClick}
+              >
+                <PiArrowBendUpRightDuotone size={24} />
+              </button>
+            </div>
+          </article>
+        ))}
       </main>
     </>
   );
