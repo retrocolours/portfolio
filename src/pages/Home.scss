@@ -89,9 +89,12 @@ span {
     transform: translateX(100%);
   }
 
-  > article[data-status="becoming-active-from-before"],
-  > article[data-status="becoming-active-from-after"] {
+  > article[data-status="becoming-active-from-before"] {
     transform: translateX(-100%);
+    transition: none;
+  }
+  > article[data-status="becoming-active-from-after"] {
+    transform: translateX(100%);
     transition: none;
   }
 }
