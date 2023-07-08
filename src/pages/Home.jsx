@@ -99,6 +99,7 @@ function Home() {
 
   return (
     <>
+    <div className="background">
       <nav className="nav">
         <div id="logo" className="nav__section">
           <a href="#">T.</a>
@@ -162,6 +163,7 @@ function Home() {
           </article>
         ))}
       </main>
+      </div>
     </>
   );
 }

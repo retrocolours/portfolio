@@ -19,6 +19,7 @@ body {
   padding: 0;
   height: 100vh;
   overflow: hidden;
+  
 }
 
 * {
@@ -36,6 +37,17 @@ h3,
 p,
 span {
   color: white;
+}
+
+.background {
+    padding: 20px; 
+    margin: 20px; 
+    border: 2px solid white; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; 
 }
 
 .nav {
