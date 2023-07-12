@@ -46,13 +46,12 @@ span {
 .site-container {
   height: 100vh;
   padding: 30px; 
-  border: 2px solid grey; 
   min-height: 100vh; 
 }
 
 .site-inner-container {
   height: 100%;
-  border: 2px solid white;
+  border: 1px solid white;
   border-radius: 2rem;
   padding: 30px;
   overflow: hidden;
@@ -179,4 +178,11 @@ span {
     background-size: cover;
     width: 50%;
   }
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    padding-right: 10px;
+    color: white;
 }
