@@ -32,6 +32,7 @@ body {
 a {
   text-decoration: none;
   color: inherit;
+  -webkit-tap-highlight-color: transparent !important;
 }
 
 h1,
@@ -127,6 +128,37 @@ span {
   -webkit-backdrop-filter: blur(7.5px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  flex-direction: column;
+
+  &__nav {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    max-width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+  }
+
+  &__subtitle {
+    font-size: 1rem;
+  }
+
+  &__text {
+    font-size: 0.8rem;
+  }
+
+  &__about,
+  &__contact {
+    background-color: transparent;
+    color: white;
+  }
 }
 
 .projects {
@@ -215,21 +247,3 @@ span {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
-
-/* Vendor prefix for older webkit-based browsers */
-// *::-webkit-scrollbar {
-//   width: 8px;
-// }
-
-// *::-webkit-scrollbar-track {
-//   background: #f1f1f1;
-// }
-
-// *::-webkit-scrollbar-thumb {
-//   background: #888;
-//   border-radius: 4px;
-// }
-
-// *::-webkit-scrollbar-thumb:hover {
-//   background: #555;
-// }
