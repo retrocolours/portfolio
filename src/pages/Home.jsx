@@ -129,7 +129,16 @@ function Home() {
           </nav> */}
 
           <main className="main">
-            <section className="about">Test About</section>
+            <section className="about">
+              <div className="about__nav">
+                <div className="about__logo">
+                  <a href="#">T.</a>
+                </div>
+                <div className="about__menu">
+                  <a href="#">Menu</a>
+                </div>
+              </div>
+            </section>
             <section className="projects">
               {groups.map((group) => (
                 <article
