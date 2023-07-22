@@ -1,11 +1,13 @@
 .moving-image-container {
   position: relative;
   width: 100%;
-  height: 200px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .moving-image-container img {
-  position: absolute;
+  position: relative;
   width: 55%;
 
   transition: transform 0.5s ease-out;
@@ -14,11 +16,7 @@
     rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
   transform-style: preserve-3d;
   z-index: -20;
-  height: 33vh;
   opacity: 0.9;
   mix-blend-mode: normal;
-  margin-left: 0;
-  position: fixed;
-  bottom: 0;
-  left: 50px;
+  align-self: center;
 }

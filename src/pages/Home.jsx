@@ -13,6 +13,7 @@ import MovingImage from "../components/MovingImage";
 
 function Home() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [imagePosition, setImagePosition] = useState({ x: 0, y: 0 });
   const [groups, setGroups] = useState([
     {
       index: 0,
@@ -52,6 +53,14 @@ function Home() {
       },
     },
   ]);
+
+  const handleMouseMove = (event) => {
+    const { clientX, clientY } = event;
+
+    const targetX = (window.innerWidth / 2 - clientX) * 0.1;
+    const targetY = (window.innerHeight / 2 - clientY) * 0.05;
+    setImagePosition({ x: targetX, y: targetY });
+  };
 
   const handleLeftClick = () => {
     const prevIndex =
@@ -101,7 +110,7 @@ function Home() {
 
   return (
     <>
-      <div className="site-container">
+      <div className="site-container" onMouseMove={handleMouseMove}>
         <div className="site-inner-container">
           {/* <nav className="nav">
             <div id="logo" className="nav__section">
@@ -157,6 +166,8 @@ function Home() {
                   source.
                 </p>
               </div>
+
+              <MovingImage xCords={imagePosition.x} yCords={imagePosition.y} />
               <div className="about__social">
                 <button className="about__about" type="button">
                   About
@@ -164,9 +175,6 @@ function Home() {
                 <button className="about__contact" type="button">
                   Contact
                 </button>
-              </div>
-              <div className="about__image">
-                <MovingImage />
               </div>
             </section>
             <section className="projects">
