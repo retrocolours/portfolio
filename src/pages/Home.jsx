@@ -8,6 +8,8 @@ import test from "../assets/test.jpg";
 import testtwo from "../assets/testtwo.jpg";
 import testthree from "../assets/testthree.jpg";
 import testfour from "../assets/testfour.jpg";
+import statue from "../assets/statue.png";
+import MovingImage from "../components/MovingImage";
 
 function Home() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -139,7 +141,10 @@ function Home() {
                 </div>
               </div>
               <div className="about__content">
-                <h1 className="about__title">Tatiana Privezentseva</h1>
+                <h1 className="about__title">
+                  Ta<span className="about__fun">t</span>iana Pri
+                  <span className="about__fun">v</span>ezentseva
+                </h1>
                 <h2 className="about__subtitle">Full-Stack Web Developer</h2>
                 <p className="about__text">
                   Contrary to popular belief, Lorem Ipsum is not simply random
@@ -149,12 +154,7 @@ function Home() {
                   looked up one of the more obscure Latin words, consectetur,
                   from a Lorem Ipsum passage, and going through the cites of the
                   word in classical literature, discovered the undoubtable
-                  source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of
-                  "de Finibus Bonorum et Malorum" (The Extremes of Good and
-                  Evil) by Cicero, written in 45 BC. This book is a treatise on
-                  the theory of ethics, very popular during the Renaissance. The
-                  first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..",
-                  comes from a line in section 1.10.32.
+                  source.
                 </p>
               </div>
               <div className="about__social">
@@ -164,6 +164,9 @@ function Home() {
                 <button className="about__contact" type="button">
                   Contact
                 </button>
+              </div>
+              <div className="about__image">
+                <MovingImage />
               </div>
             </section>
             <section className="projects">
