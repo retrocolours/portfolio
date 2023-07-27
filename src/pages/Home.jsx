@@ -190,6 +190,7 @@ function Home() {
                   {/* <p className="article__section article__section--description">
                     {group.content.description}
                   </p> */}
+                  <img className="article__section-image" src={Clarity} />
                   <div className="article__section article__section_bottom">
                     <h3 className="article__section article__section--title">
                       Title Here

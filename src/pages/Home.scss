@@ -214,11 +214,12 @@ span {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  height: 100%;
-  background-image: url(../assets/Clarity.png); /* Replace with the image path */
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
+  // overflow: hidden;
+  // height: 100%;
+  // background-image: url(../assets/Clarity.png); /* Replace with the image path */
+  // background-repeat: no-repeat;
+  // background-size: contain;
+  // background-position: center;
 
   
 
@@ -233,6 +234,10 @@ span {
   &__section {
     // height: 100%;
 
+  }
+
+  &__section-image {
+    width: 100%;
   }
 
   &__section_bottom {
