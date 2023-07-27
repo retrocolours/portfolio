@@ -4,7 +4,10 @@ import { PiLinkedinLogo } from "react-icons/pi";
 import { VscGithub } from "react-icons/vsc";
 import { PiArrowBendUpLeftDuotone } from "react-icons/pi";
 import { PiArrowBendUpRightDuotone } from "react-icons/pi";
-import test from "../assets/test.jpg";
+import { GiSparrow } from "react-icons/gi";
+import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
+
+import Clarity from "../assets/Clarity.png";
 import testtwo from "../assets/testtwo.jpg";
 import testthree from "../assets/testthree.jpg";
 import testfour from "../assets/testfour.jpg";
@@ -19,10 +22,9 @@ function Home() {
       index: 0,
       status: "active",
       content: {
-        image:
-          "1 Sed ut perspiciatis unde omnis iste natus error sit voluptatem...",
-        description: "hello",
-        imageSrc: test,
+        description: "Clarity",
+        image: Clarity,
+        imageSrc: Clarity,
       },
     },
     {
@@ -30,7 +32,7 @@ function Home() {
       status: "after",
       content: {
         image: "2 Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
-        description: "world",
+        description: "In Stock",
         imageSrc: testtwo,
       },
     },
@@ -39,7 +41,7 @@ function Home() {
       status: "after",
       content: {
         image: "3 Duis aute irure dolor in reprehenderit in voluptate velit...",
-        description: "foo",
+        description: "BrainFlix",
         imageSrc: testthree,
       },
     },
@@ -48,7 +50,27 @@ function Home() {
       status: "after",
       content: {
         image: "Excepteur sint occaecat cupidatat non proident...",
-        description: "bar",
+        description: "Bandsite",
+        imageSrc: testfour,
+      },
+    },
+
+    {
+      index: 4,
+      status: "after",
+      content: {
+        image: "Excepteur sint occaecat cupidatat non proident...",
+        description: "Industry Project",
+        imageSrc: testfour,
+      },
+    },
+
+    {
+      index: 5,
+      status: "after",
+      content: {
+        image: "Excepteur sint occaecat cupidatat non proident...",
+        description: "Volunteer Finder",
         imageSrc: testfour,
       },
     },
@@ -152,7 +174,8 @@ function Home() {
               <div className="about__content">
                 <h1 className="about__title">
                   Ta<span className="about__fun">t</span>iana Pri
-                  <span className="about__fun">v</span>ezentseva
+                  <span className="about__fun">v</span>ezen
+                  <span className="about__fun">t</span>seva
                 </h1>
                 <h2 className="about__subtitle">Full-Stack Web Developer</h2>
                 <p className="about__text">
@@ -185,33 +208,38 @@ function Home() {
                   data-index={group.index}
                   data-status={group.status}
                 >
-                  <div className="article__section article__section--image">
+                  {/* <div className="article__section article__section--image">
                     {group.content.image}
-                  </div>
-                  <div className="article__section article__section--description">
+                  </div> */}
+                  {/* <p className="article__section article__section--description">
                     {group.content.description}
-                  </div>
-                  <div className="article__section article__section--title">
+                  </p> */}
+                  <div className="article__section--container">
                     <img
-                      className="article__image"
-                      src={group.content.imageSrc}
+                      className="article__section-image"
+                      src={group.content.image}
                     />
-                  </div>
-                  <div className="article__section article__section--nav">
-                    <button
-                      className="article__button"
-                      type="button"
-                      onClick={handleLeftClick}
-                    >
-                      <PiArrowBendUpLeftDuotone size={24} />
-                    </button>
-                    <button
-                      className="article__button"
-                      type="button"
-                      onClick={handleRightClick}
-                    >
-                      <PiArrowBendUpRightDuotone size={24} />
-                    </button>
+                    <div className="article__section article__section_bottom">
+                      <h3 className="article__section article__section--title">
+                        {group.content.description}
+                      </h3>
+                      <div className="article__section article__section--nav">
+                        <button
+                          className="article__button article__button--left"
+                          type="button"
+                          onClick={handleLeftClick}
+                        >
+                          <BiLeftArrow size={21} />
+                        </button>
+                        <button
+                          className="article__button article__button--right"
+                          type="button"
+                          onClick={handleRightClick}
+                        >
+                          <BiRightArrow size={21} />
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </article>
               ))}
