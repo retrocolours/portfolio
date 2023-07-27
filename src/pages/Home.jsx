@@ -19,7 +19,6 @@ function Home() {
       index: 0,
       status: "active",
       content: {
-
         description: "Clarity",
         // imageSrc: Clarity,
       },
@@ -151,7 +150,8 @@ function Home() {
               <div className="about__content">
                 <h1 className="about__title">
                   Ta<span className="about__fun">t</span>iana Pri
-                  <span className="about__fun">v</span>ezen<span className="about__fun">t</span>seva
+                  <span className="about__fun">v</span>ezen
+                  <span className="about__fun">t</span>seva
                 </h1>
                 <h2 className="about__subtitle">Full-Stack Web Developer</h2>
                 <p className="about__text">
@@ -187,27 +187,29 @@ function Home() {
                   {/* <div className="article__section article__section--image">
                     {group.content.image}
                   </div> */}
-                  {/* <div className="article__section article__section--description">
+                  {/* <p className="article__section article__section--description">
                     {group.content.description}
-                  </div> */}
-                  <div className="article__section article__section--title">
-                    
-                  </div>
-                  <div className="article__section article__section--nav">
-                    <button
-                      className="article__button"
-                      type="button"
-                      onClick={handleLeftClick}
-                    >
-                      <PiArrowBendUpLeftDuotone size={24} />
-                    </button>
-                    <button
-                      className="article__button"
-                      type="button"
-                      onClick={handleRightClick}
-                    >
-                      <PiArrowBendUpRightDuotone size={24} />
-                    </button>
+                  </p> */}
+                  <div className="article__section article__section_bottom">
+                    <h3 className="article__section article__section--title">
+                      Title Here
+                    </h3>
+                    <div className="article__section article__section--nav">
+                      <button
+                        className="article__button"
+                        type="button"
+                        onClick={handleLeftClick}
+                      >
+                        <PiArrowBendUpLeftDuotone size={24} />
+                      </button>
+                      <button
+                        className="article__button"
+                        type="button"
+                        onClick={handleRightClick}
+                      >
+                        <PiArrowBendUpRightDuotone size={24} />
+                      </button>
+                    </div>
                   </div>
                 </article>
               ))}
