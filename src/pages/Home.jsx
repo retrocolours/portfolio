@@ -8,9 +8,12 @@ import test from "../assets/test.jpg";
 import testtwo from "../assets/testtwo.jpg";
 import testthree from "../assets/testthree.jpg";
 import testfour from "../assets/testfour.jpg";
+import statue from "../assets/statue.png";
+import MovingImage from "../components/MovingImage";
 
 function Home() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [imagePosition, setImagePosition] = useState({ x: 0, y: 0 });
   const [groups, setGroups] = useState([
     {
       index: 0,
@@ -50,6 +53,14 @@ function Home() {
       },
     },
   ]);
+
+  const handleMouseMove = (event) => {
+    const { clientX, clientY } = event;
+
+    const targetX = (window.innerWidth / 2 - clientX) * 0.1;
+    const targetY = (window.innerHeight / 2 - clientY) * 0.05;
+    setImagePosition({ x: targetX, y: targetY });
+  };
 
   const handleLeftClick = () => {
     const prevIndex =
@@ -99,7 +110,7 @@ function Home() {
 
   return (
     <>
-      <div className="site-container">
+      <div className="site-container" onMouseMove={handleMouseMove}>
         <div className="site-inner-container">
           {/* <nav className="nav">
             <div id="logo" className="nav__section">
@@ -137,6 +148,33 @@ function Home() {
                 <div className="about__menu">
                   <a href="#">Menu</a>
                 </div>
+              </div>
+              <div className="about__content">
+                <h1 className="about__title">
+                  Ta<span className="about__fun">t</span>iana Pri
+                  <span className="about__fun">v</span>ezentseva
+                </h1>
+                <h2 className="about__subtitle">Full-Stack Web Developer</h2>
+                <p className="about__text">
+                  Contrary to popular belief, Lorem Ipsum is not simply random
+                  text. It has roots in a piece of classical Latin literature
+                  from 45 BC, making it over 2000 years old. Richard McClintock,
+                  a Latin professor at Hampden-Sydney College in Virginia,
+                  looked up one of the more obscure Latin words, consectetur,
+                  from a Lorem Ipsum passage, and going through the cites of the
+                  word in classical literature, discovered the undoubtable
+                  source.
+                </p>
+              </div>
+
+              <MovingImage xCords={imagePosition.x} yCords={imagePosition.y} />
+              <div className="about__social">
+                <button className="about__about" type="button">
+                  About
+                </button>
+                <button className="about__contact" type="button">
+                  Contact
+                </button>
               </div>
             </section>
             <section className="projects">

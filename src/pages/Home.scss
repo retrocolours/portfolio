@@ -3,6 +3,12 @@
 
 // @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=GFS+Neohellenic&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Vina+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Aboreto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Babylonica&display=swap");
 
 :root {
   --background-color: rgb(6, 11, 25);
@@ -32,6 +38,7 @@ body {
 a {
   text-decoration: none;
   color: inherit;
+  -webkit-tap-highlight-color: transparent !important;
 }
 
 h1,
@@ -54,6 +61,8 @@ span {
   border-radius: 1.5rem;
   padding: 30px;
   overflow: hidden;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(7.5px);
 }
 
 .nav {
@@ -127,6 +136,62 @@ span {
   -webkit-backdrop-filter: blur(7.5px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1rem;
+  font-family: "GFS Neohellenic", sans-serif;
+
+  &__nav {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    max-width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "Aboreto", cursive;
+    // gap: 15rem;
+  }
+
+  &__logo {
+    font-family: "Babylonica", cursive;
+    font-size: 2rem;
+    border-right: 1px solid rgb(83, 83, 216);
+    padding-right: 2rem;
+  }
+
+  &__title {
+    font-size: 3rem;
+    font-family: "Babylonica", cursive;
+    margin: 0;
+  }
+
+  &__fun {
+    color: rgb(83, 196, 216);
+  }
+
+  &__subtitle {
+    font-size: 1rem;
+    font-family: "Aboreto", cursive;
+    letter-spacing: 0.1rem;
+  }
+
+  &__text {
+    font-size: 1rem;
+    line-height: 1rem;
+    word-spacing: 0.1rem;
+  }
+
+  &__about,
+  &__contact {
+    background-color: transparent;
+    color: white;
+  }
 }
 
 .projects {
@@ -215,21 +280,3 @@ span {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
-
-/* Vendor prefix for older webkit-based browsers */
-// *::-webkit-scrollbar {
-//   width: 8px;
-// }
-
-// *::-webkit-scrollbar-track {
-//   background: #f1f1f1;
-// }
-
-// *::-webkit-scrollbar-thumb {
-//   background: #888;
-//   border-radius: 4px;
-// }
-
-// *::-webkit-scrollbar-thumb:hover {
-//   background: #555;
-// }
