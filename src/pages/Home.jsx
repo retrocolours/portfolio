@@ -4,6 +4,9 @@ import { PiLinkedinLogo } from "react-icons/pi";
 import { VscGithub } from "react-icons/vsc";
 import { PiArrowBendUpLeftDuotone } from "react-icons/pi";
 import { PiArrowBendUpRightDuotone } from "react-icons/pi";
+import { GiSparrow } from "react-icons/gi";
+import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
+
 import Clarity from "../assets/Clarity.png";
 import testtwo from "../assets/testtwo.jpg";
 import testthree from "../assets/testthree.jpg";
@@ -20,7 +23,8 @@ function Home() {
       status: "active",
       content: {
         description: "Clarity",
-        // imageSrc: Clarity,
+        image: Clarity,
+        imageSrc: Clarity,
       },
     },
     {
@@ -28,7 +32,7 @@ function Home() {
       status: "after",
       content: {
         image: "2 Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
-        description: "world",
+        description: "In Stock",
         imageSrc: testtwo,
       },
     },
@@ -37,7 +41,7 @@ function Home() {
       status: "after",
       content: {
         image: "3 Duis aute irure dolor in reprehenderit in voluptate velit...",
-        description: "foo",
+        description: "BrainFlix",
         imageSrc: testthree,
       },
     },
@@ -46,7 +50,27 @@ function Home() {
       status: "after",
       content: {
         image: "Excepteur sint occaecat cupidatat non proident...",
-        description: "bar",
+        description: "Bandsite",
+        imageSrc: testfour,
+      },
+    },
+
+    {
+      index: 4,
+      status: "after",
+      content: {
+        image: "Excepteur sint occaecat cupidatat non proident...",
+        description: "Industry Project",
+        imageSrc: testfour,
+      },
+    },
+
+    {
+      index: 5,
+      status: "after",
+      content: {
+        image: "Excepteur sint occaecat cupidatat non proident...",
+        description: "Volunteer Finder",
         imageSrc: testfour,
       },
     },
@@ -190,26 +214,31 @@ function Home() {
                   {/* <p className="article__section article__section--description">
                     {group.content.description}
                   </p> */}
-                  <img className="article__section-image" src={Clarity} />
-                  <div className="article__section article__section_bottom">
-                    <h3 className="article__section article__section--title">
-                      Title Here
-                    </h3>
-                    <div className="article__section article__section--nav">
-                      <button
-                        className="article__button"
-                        type="button"
-                        onClick={handleLeftClick}
-                      >
-                        <PiArrowBendUpLeftDuotone size={24} />
-                      </button>
-                      <button
-                        className="article__button"
-                        type="button"
-                        onClick={handleRightClick}
-                      >
-                        <PiArrowBendUpRightDuotone size={24} />
-                      </button>
+                  <div className="article__section--container">
+                    <img
+                      className="article__section-image"
+                      src={group.content.image}
+                    />
+                    <div className="article__section article__section_bottom">
+                      <h3 className="article__section article__section--title">
+                        {group.content.description}
+                      </h3>
+                      <div className="article__section article__section--nav">
+                        <button
+                          className="article__button article__button--left"
+                          type="button"
+                          onClick={handleLeftClick}
+                        >
+                          <BiLeftArrow size={21} />
+                        </button>
+                        <button
+                          className="article__button article__button--right"
+                          type="button"
+                          onClick={handleRightClick}
+                        >
+                          <BiRightArrow size={21} />
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </article>
