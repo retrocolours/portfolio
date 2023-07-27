@@ -4,7 +4,7 @@ import { PiLinkedinLogo } from "react-icons/pi";
 import { VscGithub } from "react-icons/vsc";
 import { PiArrowBendUpLeftDuotone } from "react-icons/pi";
 import { PiArrowBendUpRightDuotone } from "react-icons/pi";
-import test from "../assets/test.jpg";
+import Clarity from "../assets/Clarity.png";
 import testtwo from "../assets/testtwo.jpg";
 import testthree from "../assets/testthree.jpg";
 import testfour from "../assets/testfour.jpg";
@@ -19,10 +19,9 @@ function Home() {
       index: 0,
       status: "active",
       content: {
-        image:
-          "1 Sed ut perspiciatis unde omnis iste natus error sit voluptatem...",
-        description: "hello",
-        imageSrc: test,
+
+        description: "Clarity",
+        // imageSrc: Clarity,
       },
     },
     {
@@ -152,7 +151,7 @@ function Home() {
               <div className="about__content">
                 <h1 className="about__title">
                   Ta<span className="about__fun">t</span>iana Pri
-                  <span className="about__fun">v</span>ezentseva
+                  <span className="about__fun">v</span>ezen<span className="about__fun">t</span>seva
                 </h1>
                 <h2 className="about__subtitle">Full-Stack Web Developer</h2>
                 <p className="about__text">
@@ -185,17 +184,14 @@ function Home() {
                   data-index={group.index}
                   data-status={group.status}
                 >
-                  <div className="article__section article__section--image">
+                  {/* <div className="article__section article__section--image">
                     {group.content.image}
-                  </div>
-                  <div className="article__section article__section--description">
+                  </div> */}
+                  {/* <div className="article__section article__section--description">
                     {group.content.description}
-                  </div>
+                  </div> */}
                   <div className="article__section article__section--title">
-                    <img
-                      className="article__image"
-                      src={group.content.imageSrc}
-                    />
+                    
                   </div>
                   <div className="article__section article__section--nav">
                     <button
