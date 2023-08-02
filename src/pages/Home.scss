@@ -256,10 +256,51 @@ span {
     align-items: center;
   }
 
+  &__section-image-container {
+    // display: flex;
+    // align-items: center;
+    width: 100%;
+    overflow: hidden;
+    height: 250px;
+    position: relative;
+  }
+
   &__section-image {
-    width: 90%;
-    margin: 1rem 1rem 0 1rem;
+    // width: 90%;
+    width: 100%;
+    // margin: 1rem 1rem 0 1rem;
     border-radius: 1rem;
+    transition: transform 400ms ease;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+
+    &[data-status="inactive"] {
+      transform: translateX(-100%);
+      transition: none;
+    }
+
+    &[data-status="active"] {
+      transform: translateX(0%);
+      z-index: 100000000;
+    }
+
+    &[data-status="before"] {
+      transform: translateX(-100%);
+    }
+
+    &[data-status="after"] {
+      transform: translateX(100%);
+    }
+
+    &[data-status="becoming-active-from-before"] {
+      transform: translateX(-100%);
+      transition: none;
+    }
+    &[data-status="becoming-active-from-after"] {
+      transform: translateX(100%);
+      transition: none;
+    }
   }
 
   &__section_bottom {
