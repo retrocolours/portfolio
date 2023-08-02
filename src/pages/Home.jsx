@@ -23,7 +23,7 @@ function Home() {
       status: "active",
       content: {
         description: "Clarity",
-        image: Clarity,
+        image: "1 Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
         imageSrc: Clarity,
       },
     },
@@ -75,6 +75,7 @@ function Home() {
       },
     },
   ]);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleMouseMove = (event) => {
     const { clientX, clientY } = event;
@@ -114,6 +115,19 @@ function Home() {
         return group;
       })
     );
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", handleOutsideClick);
+
+    return () => {
+      document.removeEventListener("click", handleOutsideClick);
+    };
+  }, []);
+
+  const handleOutsideClick = (e) => {
+    e.stopPropagation();
+    setIsMenuOpen(false);
   };
 
   useEffect(() => {
@@ -168,7 +182,20 @@ function Home() {
                   <a href="#">T.</a>
                 </div>
                 <div className="about__menu">
-                  <a href="#">Menu</a>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setIsMenuOpen((prev) => !prev);
+                    }}
+                    href="#"
+                  >
+                    Menu
+                  </button>
+                  {isMenuOpen && (
+                    <div className="about__menu-container">
+                      Menu Placeholder
+                    </div>
+                  )}
                 </div>
               </div>
               <div className="about__content">
@@ -217,7 +244,7 @@ function Home() {
                   <div className="article__section--container">
                     <img
                       className="article__section-image"
-                      src={group.content.image}
+                      src={group.content.imageSrc}
                     />
                     <div className="article__section article__section_bottom">
                       <h3 className="article__section article__section--title">
