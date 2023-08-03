@@ -13,9 +13,9 @@ import testthree from "../assets/testthree.jpg";
 import testfour from "../assets/testfour.jpg";
 import statue from "../assets/statue.png";
 import MovingImage from "../components/MovingImage";
+import ProjectSquare from "../components/ProjectSquare/ProjectSquare";
 
 function Home() {
-  const [activeIndex, setActiveIndex] = useState(0);
   const [imagePosition, setImagePosition] = useState({ x: 0, y: 0 });
   const [groups, setGroups] = useState([
     {
@@ -24,7 +24,6 @@ function Home() {
       content: {
         description: "Clarity",
         image: "1 Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
-        // imageSrc: [Clarity, testtwo, testthree, testfour, Clarity, testfour],
         imageSrc: [
           {
             src: Clarity,
@@ -51,7 +50,16 @@ function Home() {
       content: {
         image: "2 Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
         description: "In Stock",
-        imageSrc: [testtwo],
+        imageSrc: [
+          {
+            src: Clarity,
+            status: "active",
+          },
+          {
+            src: testtwo,
+            status: "after",
+          },
+        ],
       },
     },
     {
@@ -60,7 +68,16 @@ function Home() {
       content: {
         image: "3 Duis aute irure dolor in reprehenderit in voluptate velit...",
         description: "BrainFlix",
-        imageSrc: [testthree],
+        imageSrc: [
+          {
+            src: Clarity,
+            status: "active",
+          },
+          {
+            src: testtwo,
+            status: "after",
+          },
+        ],
       },
     },
     {
@@ -69,7 +86,16 @@ function Home() {
       content: {
         image: "Excepteur sint occaecat cupidatat non proident...",
         description: "Bandsite",
-        imageSrc: [testfour],
+        imageSrc: [
+          {
+            src: Clarity,
+            status: "active",
+          },
+          {
+            src: testtwo,
+            status: "after",
+          },
+        ],
       },
     },
 
@@ -79,7 +105,16 @@ function Home() {
       content: {
         image: "Excepteur sint occaecat cupidatat non proident...",
         description: "Industry Project",
-        imageSrc: [testfour],
+        imageSrc: [
+          {
+            src: Clarity,
+            status: "active",
+          },
+          {
+            src: testtwo,
+            status: "after",
+          },
+        ],
       },
     },
 
@@ -89,13 +124,20 @@ function Home() {
       content: {
         image: "Excepteur sint occaecat cupidatat non proident...",
         description: "Volunteer Finder",
-        imageSrc: [testfour],
+        imageSrc: [
+          {
+            src: Clarity,
+            status: "active",
+          },
+          {
+            src: testtwo,
+            status: "after",
+          },
+        ],
       },
     },
   ]);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  // This needs to be in its own component
 
   const handleMouseMove = (event) => {
     const { clientX, clientY } = event;
@@ -103,83 +145,6 @@ function Home() {
     const targetX = (window.innerWidth / 2 - clientX) * 0.1;
     const targetY = (window.innerHeight / 2 - clientY) * 0.05;
     setImagePosition({ x: targetX, y: targetY });
-  };
-
-  const handleLeftClick = () => {
-    console.log("handleLeftClick");
-    // instead of using groups
-
-    // we are going to use groups[0].content.imageSrc[]
-    const imageGroups = groups[0].content.imageSrc;
-
-    const prevIndex =
-      activeIndex - 1 >= 0 ? activeIndex - 1 : imageGroups.length - 1;
-    setActiveIndex(prevIndex);
-    setGroups(
-      imageGroups.map((image, index) => {
-        if (index === prevIndex) {
-          return { ...image, status: "becoming-active-from-before" };
-        } else if (index === activeIndex) {
-          return { ...image, status: "after" };
-        }
-        return image;
-      })
-    );
-    setGroups(
-      groups.map((group, index) => {
-        if (index === 0) {
-          return {
-            ...group,
-            content: {
-              ...group.content,
-              imageSrc: imageGroups.map((image, index) => {
-                if (index === prevIndex) {
-                  return { ...image, status: "becoming-active-from-before" };
-                } else if (index === activeIndex) {
-                  return { ...image, status: "after" };
-                }
-                return image;
-              }),
-            },
-            status: "becoming-active-from-after",
-          };
-        }
-        return group;
-      })
-    );
-  };
-
-  const handleRightClick = () => {
-    console.log("handleRightClick");
-    const imageGroups = groups[0].content.imageSrc;
-    console.log("imageGroups: ", imageGroups);
-
-    const nextIndex =
-      activeIndex + 1 <= imageGroups.length - 1 ? activeIndex + 1 : 0;
-    setActiveIndex(nextIndex);
-
-    setGroups(
-      groups.map((group, index) => {
-        if (index === 0) {
-          return {
-            ...group,
-            content: {
-              ...group.content,
-              imageSrc: imageGroups.map((image, index) => {
-                if (index === nextIndex) {
-                  return { ...image, status: "becoming-active-from-after" };
-                } else if (index === activeIndex) {
-                  return { ...image, status: "before" };
-                }
-                return image;
-              }),
-            },
-            status: "becoming-active-from-after",
-          };
-        }
-        return group;
-      })
-    );
   };
 
   useEffect(() => {
@@ -194,49 +159,6 @@ function Home() {
     e.stopPropagation();
     setIsMenuOpen(false);
   };
-
-  useEffect(() => {
-    // setGroups((prevGroups) =>
-    //   prevGroups.map((group) => {
-    //     if (
-    //       group.status === "becoming-active-from-after" ||
-    //       group.status === "becoming-active-from-before"
-    //     ) {
-    //       return { ...group, status: "active" };
-    //     }
-    //     return group;
-    //   })
-    // );
-    const imageGroups = groups[0].content.imageSrc;
-
-    setGroups((prevGroups) => {
-      console.log("prevGroups: ", prevGroups);
-      return prevGroups.map((group, index) => {
-        if (index === 0) {
-          console.log("group.content.imageSrc!!: ", group.content.imageSrc);
-          return {
-            ...group,
-            content: {
-              ...group.content,
-              imageSrc: group.content.imageSrc.map((image, index) => {
-                console.log("image ????: ", image);
-                if (
-                  image?.status === "becoming-active-from-after" ||
-                  image?.status === "becoming-active-from-before"
-                ) {
-                  return { ...image, status: "active" };
-                }
-
-                return image;
-              }),
-            },
-          };
-        }
-
-        return group;
-      });
-    });
-  }, [activeIndex]);
 
   return (
     <>
@@ -322,60 +244,8 @@ function Home() {
               </div>
             </section>
             <section className="projects">
-              {groups.map((group) => (
-                <article
-                  className="article"
-                  key={group.index}
-                  data-index={group.index}
-                  // data-status={group.status}
-                >
-                  {/* <div className="article__section article__section--image">
-                    {group.content.image}
-                  </div> */}
-                  {/* <p className="article__section article__section--description">
-                    {group.content.description}
-                  </p> */}
-                  <div className="article__section--container">
-                    <div className="article__section-image-container">
-                      {group.content.imageSrc.map((image, index) => {
-                        // console.log("image1111: ", image);
-                        return (
-                          <img
-                            key={`project-image-${index}`}
-                            className="article__section-image"
-                            src={image?.src}
-                            data-status={image?.status}
-                          />
-                        );
-                      })}
-                      {/* <img
-                        className="article__section-image"
-                        src={group.content.imageSrc[activeIndex]}
-                      /> */}
-                    </div>
-                    <div className="article__section article__section_bottom">
-                      <h3 className="article__section article__section--title">
-                        {group.content.description}
-                      </h3>
-                      <div className="article__section article__section--nav">
-                        <button
-                          className="article__button article__button--left"
-                          type="button"
-                          onClick={handleLeftClick}
-                        >
-                          <BiLeftArrow size={21} />
-                        </button>
-                        <button
-                          className="article__button article__button--right"
-                          type="button"
-                          onClick={handleRightClick}
-                        >
-                          <BiRightArrow size={21} />
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </article>
+              {groups.map((group, index) => (
+                <ProjectSquare projectData={group} key={`project-${index}`} />
               ))}
             </section>
           </main>
