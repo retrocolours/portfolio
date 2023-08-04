@@ -162,6 +162,7 @@ function Home() {
 
   return (
     <>
+      <div class="grain"></div>
       <div className="site-container" onMouseMove={handleMouseMove}>
         <div className="test"></div>
         <div className="site-inner-container">
@@ -193,8 +194,6 @@ function Home() {
           </nav> */}
 
           <main className="main">
-            {/* <div class="grain"></div> */}
-
             <section className="about">
               <div className="about__nav">
                 <div className="about__logo">
