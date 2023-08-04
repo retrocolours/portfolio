@@ -162,7 +162,7 @@ function Home() {
 
   return (
     <>
-      <div class="grain"></div>
+      {/* <div className="grain"></div> */}
       <div className="site-container" onMouseMove={handleMouseMove}>
         <div className="test"></div>
         <div className="site-inner-container">

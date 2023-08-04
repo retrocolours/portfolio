@@ -62,7 +62,7 @@ span {
   padding: 30px;
   overflow: hidden;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(7.5px);
+  // backdrop-filter: blur(7.5px);
 }
 
 .nav {
@@ -101,39 +101,15 @@ span {
   position: relative;
   height: 100%;
   gap: 2rem;
-  > article[data-status="inactive"] {
-    transform: translateX(-100%);
-    transition: none;
-  }
 
-  > article[data-status="active"] {
-    transform: translateX(0%);
-  }
-
-  > article[data-status="before"] {
-    transform: translateX(-100%);
-  }
-
-  > article[data-status="after"] {
-    transform: translateX(100%);
-  }
-
-  > article[data-status="becoming-active-from-before"] {
-    transform: translateX(-100%);
-    transition: none;
-  }
-  > article[data-status="becoming-active-from-after"] {
-    transform: translateX(100%);
-    transition: none;
-  }
 }
 
 .about {
   flex-basis: 35%;
   background: rgba(109, 40, 109, 0.05);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(7.5px);
-  -webkit-backdrop-filter: blur(7.5px);
+  // backdrop-filter: blur(7.5px);
+  // -webkit-backdrop-filter: blur(7.5px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   display: flex;

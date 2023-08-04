@@ -7,8 +7,7 @@ const ProjectSquare = ({ projectData }) => {
   const [imageArr, setImageArr] = useState(projectData.content.imageSrc);
 
   useEffect(() => {
-    setImageArr(
-      imageArr.map((image) => {
+    setImageArr(prev => prev.map((image) => {
         if (
           image?.status === "becoming-active-from-after" ||
           image?.status === "becoming-active-from-before"
@@ -21,7 +20,7 @@ const ProjectSquare = ({ projectData }) => {
   }, [activeIndex]);
 
   const handleLeftClick = () => {
-    const imageGroups = projectData.content.imageSrc;
+    const imageGroups = imageArr;
     const prevIndex =
       activeIndex - 1 >= 0 ? activeIndex - 1 : imageGroups.length - 1;
     setActiveIndex(prevIndex);
@@ -38,7 +37,7 @@ const ProjectSquare = ({ projectData }) => {
   };
 
   const handleRightClick = () => {
-    const imageGroups = projectData.content.imageSrc;
+    const imageGroups = imageArr;
     const nextIndex =
       activeIndex + 1 <= imageGroups.length - 1 ? activeIndex + 1 : 0;
     setActiveIndex(nextIndex);
