@@ -1,5 +1,5 @@
 .article {
-  transition: transform 400ms ease;
+  //   transition: transform 1000ms ease;
   border: solid 1px white;
   border-radius: 1rem;
   display: flex;
@@ -32,7 +32,7 @@
     width: 100%;
     // margin: 1rem 1rem 0 1rem;
     border-radius: 1rem;
-    transition: transform 400ms ease;
+    transition: transform 200ms ease;
     position: absolute;
     left: 0px;
     top: 0px;
