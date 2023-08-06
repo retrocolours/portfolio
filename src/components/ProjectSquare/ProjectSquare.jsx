@@ -1,59 +1,28 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./ProjectSquare.scss";
 import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
 
 const ProjectSquare = ({ projectData }) => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [imageArr, setImageArr] = useState(projectData.content.imageSrc);
+  const [direction, setDirection] = useState(null); // Add this state variable
 
-  useEffect(() => {
-    setImageArr(prev => prev.map((image) => {
-        if (
-          image?.status === "becoming-active-from-after" ||
-          image?.status === "becoming-active-from-before"
-        ) {
-          return { ...image, status: "active" };
-        }
-        return image;
-      })
-    );
-  }, [activeIndex]);
+  const imageArr = projectData.content.imageSrc;
 
   const handleLeftClick = () => {
-    const imageGroups = imageArr;
-    const prevIndex =
-      activeIndex - 1 >= 0 ? activeIndex - 1 : imageGroups.length - 1;
-    setActiveIndex(prevIndex);
-    setImageArr(
-      imageArr.map((image, index) => {
-        if (index === prevIndex) {
-          return { ...image, status: "becoming-active-from-before" };
-        } else if (index === activeIndex) {
-          return { ...image, status: "after" };
-        }
-        return image;
-      })
+    setDirection("left");
+    setActiveIndex((prevIndex) =>
+      prevIndex - 1 >= 0 ? prevIndex - 1 : imageArr.length - 1
     );
   };
 
   const handleRightClick = () => {
-    const imageGroups = imageArr;
-    const nextIndex =
-      activeIndex + 1 <= imageGroups.length - 1 ? activeIndex + 1 : 0;
-    setActiveIndex(nextIndex);
-    setImageArr(
-      imageArr.map((image, index) => {
-        if (index === nextIndex) {
-          return { ...image, status: "becoming-active-from-after" };
-        } else if (index === activeIndex) {
-          return { ...image, status: "before" };
-        }
-        return image;
-      })
+    setDirection("right");
+    setActiveIndex((nextIndex) =>
+      nextIndex + 1 <= imageArr.length - 1 ? nextIndex + 1 : 0
     );
   };
 
-  if (!imageArr.length) return "WEEEE";
+  if (!imageArr.length) return "empty imageArr state";
 
   return (
     <article
@@ -64,12 +33,42 @@ const ProjectSquare = ({ projectData }) => {
       <div className="article__section--container">
         <div className="article__section-image-container">
           {imageArr.map((image, index) => {
+            let style =
+              direction === "right" // Use direction to determine default style
+                ? { transform: "translateX(-100%)" }
+                : { transform: "translateX(100%)" };
+
+            if (index === activeIndex) {
+              style = { transform: "translateX(0%)" }; // Shift to Active
+            } else if (
+              index === activeIndex - 1 ||
+              (activeIndex === 0 && index === imageArr.length - 1)
+            ) {
+              style = {
+                transform: "translateX(-100%)",
+                ...(direction === "left" && { transition: "none" }),
+
+              }; // Shift Left
+            } else if (
+              index === activeIndex + 1 ||
+              (activeIndex === imageArr.length - 1 && index === 0)
+            ) {
+              // if current index is the index AFTER activeIndex OR
+              // if current index is the first index (0) AND active index is the last index
+              // THEN translateX to the right
+              // Additionally if this happened from a SHIFT left button - have a transition
+              // if it happened from SHIFT RIGHT button - no transition (teleport)
+              style = {
+                transform: "translateX(100%)",
+                ...(direction === "right" && { transition: "none" }),
+              }; // Shift Right
+            }
             return (
               <img
                 key={`project-image-${index}`}
                 className="article__section-image"
-                src={image?.src}
-                data-status={image?.status}
+                src={image.src}
+                style={style}
               />
             );
           })}

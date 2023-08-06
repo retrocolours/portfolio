@@ -15,128 +15,115 @@ import statue from "../assets/statue.png";
 import MovingImage from "../components/MovingImage";
 import ProjectSquare from "../components/ProjectSquare/ProjectSquare";
 
+const groups = [
+  {
+    index: 0,
+    content: {
+      description: "Clarity",
+      image: "1 Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+      imageSrc: [
+        {
+          src: testtwo,
+        },
+        {
+          src: testthree,
+        },
+        {
+          src: testfour,
+        },
+      ],
+    },
+  },
+  {
+    index: 1,
+    content: {
+      image: "2 Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+      description: "In Stock",
+      imageSrc: [
+        {
+          src: Clarity,
+        },
+        {
+          src: testtwo,
+        },
+        {
+          src: testthree,
+        },
+      ],
+    },
+  },
+  {
+    index: 2,
+    content: {
+      image: "3 Duis aute irure dolor in reprehenderit in voluptate velit...",
+      description: "BrainFlix",
+      imageSrc: [
+        {
+          src: Clarity,
+        },
+        {
+          src: testtwo,
+        },
+      ],
+    },
+  },
+  {
+    index: 3,
+    content: {
+      image: "Excepteur sint occaecat cupidatat non proident...",
+      description: "Bandsite",
+      imageSrc: [
+        {
+          src: Clarity,
+        },
+        {
+          src: testtwo,
+        },
+        {
+          src: testthree,
+        },
+      ],
+    },
+  },
+
+  {
+    index: 4,
+    content: {
+      image: "Excepteur sint occaecat cupidatat non proident...",
+      description: "Industry Project",
+      imageSrc: [
+        {
+          src: Clarity,
+        },
+        {
+          src: testtwo,
+        },
+        {
+          src: testthree,
+        },
+      ],
+    },
+  },
+
+  {
+    index: 5,
+    content: {
+      image: "Excepteur sint occaecat cupidatat non proident...",
+      description: "Volunteer Finder",
+      imageSrc: [
+        {
+          src: Clarity,
+        },
+        {
+          src: testtwo,
+        },
+      ],
+    },
+  },
+];
+
 function Home() {
   const [imagePosition, setImagePosition] = useState({ x: 0, y: 0 });
-  const [groups, setGroups] = useState([
-    {
-      index: 0,
-      status: "active",
-      content: {
-        description: "Clarity",
-        image: "1 Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
-        imageSrc: [
-          {
-            src: Clarity,
-            status: "active",
-          },
-          {
-            src: testtwo,
-            status: "after",
-          },
-          {
-            src: testthree,
-            status: "after",
-          },
-          {
-            src: testfour,
-            status: "after",
-          },
-        ],
-      },
-    },
-    {
-      index: 1,
-      status: "after",
-      content: {
-        image: "2 Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
-        description: "In Stock",
-        imageSrc: [
-          {
-            src: Clarity,
-            status: "active",
-          },
-          {
-            src: testtwo,
-            status: "after",
-          },
-        ],
-      },
-    },
-    {
-      index: 2,
-      status: "after",
-      content: {
-        image: "3 Duis aute irure dolor in reprehenderit in voluptate velit...",
-        description: "BrainFlix",
-        imageSrc: [
-          {
-            src: Clarity,
-            status: "active",
-          },
-          {
-            src: testtwo,
-            status: "after",
-          },
-        ],
-      },
-    },
-    {
-      index: 3,
-      status: "after",
-      content: {
-        image: "Excepteur sint occaecat cupidatat non proident...",
-        description: "Bandsite",
-        imageSrc: [
-          {
-            src: Clarity,
-            status: "active",
-          },
-          {
-            src: testtwo,
-            status: "after",
-          },
-        ],
-      },
-    },
-
-    {
-      index: 4,
-      status: "after",
-      content: {
-        image: "Excepteur sint occaecat cupidatat non proident...",
-        description: "Industry Project",
-        imageSrc: [
-          {
-            src: Clarity,
-            status: "active",
-          },
-          {
-            src: testtwo,
-            status: "after",
-          },
-        ],
-      },
-    },
-
-    {
-      index: 5,
-      status: "after",
-      content: {
-        image: "Excepteur sint occaecat cupidatat non proident...",
-        description: "Volunteer Finder",
-        imageSrc: [
-          {
-            src: Clarity,
-            status: "active",
-          },
-          {
-            src: testtwo,
-            status: "after",
-          },
-        ],
-      },
-    },
-  ]);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleMouseMove = (event) => {
@@ -162,7 +149,7 @@ function Home() {
 
   return (
     <>
-      {/* <div className="grain"></div> */}
+      <div className="grain"></div>
       <div className="site-container" onMouseMove={handleMouseMove}>
         <div className="test"></div>
         <div className="site-inner-container">
