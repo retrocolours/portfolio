@@ -13,68 +13,117 @@ import testthree from "../assets/testthree.jpg";
 import testfour from "../assets/testfour.jpg";
 import statue from "../assets/statue.png";
 import MovingImage from "../components/MovingImage";
+import ProjectSquare from "../components/ProjectSquare/ProjectSquare";
+
+const groups = [
+  {
+    index: 0,
+    content: {
+      description: "Clarity",
+      image: "1 Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+      imageSrc: [
+        {
+          src: testtwo,
+        },
+        {
+          src: testthree,
+        },
+        {
+          src: testfour,
+        },
+      ],
+    },
+  },
+  {
+    index: 1,
+    content: {
+      image: "2 Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+      description: "In Stock",
+      imageSrc: [
+        {
+          src: Clarity,
+        },
+        {
+          src: testtwo,
+        },
+        {
+          src: testthree,
+        },
+      ],
+    },
+  },
+  {
+    index: 2,
+    content: {
+      image: "3 Duis aute irure dolor in reprehenderit in voluptate velit...",
+      description: "BrainFlix",
+      imageSrc: [
+        {
+          src: Clarity,
+        },
+        {
+          src: testtwo,
+        },
+      ],
+    },
+  },
+  {
+    index: 3,
+    content: {
+      image: "Excepteur sint occaecat cupidatat non proident...",
+      description: "Bandsite",
+      imageSrc: [
+        {
+          src: Clarity,
+        },
+        {
+          src: testtwo,
+        },
+        {
+          src: testthree,
+        },
+      ],
+    },
+  },
+
+  {
+    index: 4,
+    content: {
+      image: "Excepteur sint occaecat cupidatat non proident...",
+      description: "Industry Project",
+      imageSrc: [
+        {
+          src: Clarity,
+        },
+        {
+          src: testtwo,
+        },
+        {
+          src: testthree,
+        },
+      ],
+    },
+  },
+
+  {
+    index: 5,
+    content: {
+      image: "Excepteur sint occaecat cupidatat non proident...",
+      description: "Volunteer Finder",
+      imageSrc: [
+        {
+          src: Clarity,
+        },
+        {
+          src: testtwo,
+        },
+      ],
+    },
+  },
+];
 
 function Home() {
-  const [activeIndex, setActiveIndex] = useState(0);
   const [imagePosition, setImagePosition] = useState({ x: 0, y: 0 });
-  const [groups, setGroups] = useState([
-    {
-      index: 0,
-      status: "active",
-      content: {
-        description: "Clarity",
-        image: "1 Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
-        imageSrc: Clarity,
-      },
-    },
-    {
-      index: 1,
-      status: "after",
-      content: {
-        image: "2 Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
-        description: "In Stock",
-        imageSrc: testtwo,
-      },
-    },
-    {
-      index: 2,
-      status: "after",
-      content: {
-        image: "3 Duis aute irure dolor in reprehenderit in voluptate velit...",
-        description: "BrainFlix",
-        imageSrc: testthree,
-      },
-    },
-    {
-      index: 3,
-      status: "after",
-      content: {
-        image: "Excepteur sint occaecat cupidatat non proident...",
-        description: "Bandsite",
-        imageSrc: testfour,
-      },
-    },
-
-    {
-      index: 4,
-      status: "after",
-      content: {
-        image: "Excepteur sint occaecat cupidatat non proident...",
-        description: "Industry Project",
-        imageSrc: testfour,
-      },
-    },
-
-    {
-      index: 5,
-      status: "after",
-      content: {
-        image: "Excepteur sint occaecat cupidatat non proident...",
-        description: "Volunteer Finder",
-        imageSrc: testfour,
-      },
-    },
-  ]);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleMouseMove = (event) => {
@@ -83,38 +132,6 @@ function Home() {
     const targetX = (window.innerWidth / 2 - clientX) * 0.1;
     const targetY = (window.innerHeight / 2 - clientY) * 0.05;
     setImagePosition({ x: targetX, y: targetY });
-  };
-
-  const handleLeftClick = () => {
-    const prevIndex =
-      activeIndex - 1 >= 0 ? activeIndex - 1 : groups.length - 1;
-    setActiveIndex(prevIndex);
-    setGroups(
-      groups.map((group, index) => {
-        if (index === prevIndex) {
-          return { ...group, status: "becoming-active-from-before" };
-        } else if (index === activeIndex) {
-          return { ...group, status: "after" };
-        }
-        return group;
-      })
-    );
-  };
-
-  const handleRightClick = () => {
-    const nextIndex =
-      activeIndex + 1 <= groups.length - 1 ? activeIndex + 1 : 0;
-    setActiveIndex(nextIndex);
-    setGroups(
-      groups.map((group, index) => {
-        if (index === nextIndex) {
-          return { ...group, status: "becoming-active-from-after" };
-        } else if (index === activeIndex) {
-          return { ...group, status: "before" };
-        }
-        return group;
-      })
-    );
   };
 
   useEffect(() => {
@@ -130,23 +147,11 @@ function Home() {
     setIsMenuOpen(false);
   };
 
-  useEffect(() => {
-    setGroups((prevGroups) =>
-      prevGroups.map((group) => {
-        if (
-          group.status === "becoming-active-from-after" ||
-          group.status === "becoming-active-from-before"
-        ) {
-          return { ...group, status: "active" };
-        }
-        return group;
-      })
-    );
-  }, [activeIndex]);
-
   return (
     <>
+      <div className="grain"></div>
       <div className="site-container" onMouseMove={handleMouseMove}>
+        <div className="test"></div>
         <div className="site-inner-container">
           {/* <nav className="nav">
             <div id="logo" className="nav__section">
@@ -228,47 +233,8 @@ function Home() {
               </div>
             </section>
             <section className="projects">
-              {groups.map((group) => (
-                <article
-                  className="article"
-                  key={group.index}
-                  data-index={group.index}
-                  data-status={group.status}
-                >
-                  {/* <div className="article__section article__section--image">
-                    {group.content.image}
-                  </div> */}
-                  {/* <p className="article__section article__section--description">
-                    {group.content.description}
-                  </p> */}
-                  <div className="article__section--container">
-                    <img
-                      className="article__section-image"
-                      src={group.content.imageSrc}
-                    />
-                    <div className="article__section article__section_bottom">
-                      <h3 className="article__section article__section--title">
-                        {group.content.description}
-                      </h3>
-                      <div className="article__section article__section--nav">
-                        <button
-                          className="article__button article__button--left"
-                          type="button"
-                          onClick={handleLeftClick}
-                        >
-                          <BiLeftArrow size={21} />
-                        </button>
-                        <button
-                          className="article__button article__button--right"
-                          type="button"
-                          onClick={handleRightClick}
-                        >
-                          <BiRightArrow size={21} />
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </article>
+              {groups.map((group, index) => (
+                <ProjectSquare projectData={group} key={`project-${index}`} />
               ))}
             </section>
           </main>
