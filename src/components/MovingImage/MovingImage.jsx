@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./MovingImage.scss";
-import statue from "../assets/statue.png";
+import statue from "../../assets/statue.png";
 
 const MovingImage = ({ xCords, yCords }) => {
   return (

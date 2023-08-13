@@ -12,7 +12,7 @@ import testtwo from "../assets/testtwo.jpg";
 import testthree from "../assets/testthree.jpg";
 import testfour from "../assets/testfour.jpg";
 import statue from "../assets/statue.png";
-import MovingImage from "../components/MovingImage";
+import MovingImage from "../components/MovingImage/MovingImage";
 import ProjectSquare from "../components/ProjectSquare/ProjectSquare";
 
 const groups = [
@@ -187,7 +187,7 @@ function Home() {
                   <a href="#">T.</a>
                 </div>
                 <div className="about__menu">
-                  <button
+                  <button className="about__menu-button"
                     onClick={(e) => {
                       e.stopPropagation();
                       setIsMenuOpen((prev) => !prev);
@@ -211,14 +211,24 @@ function Home() {
                 </h1>
                 <h2 className="about__subtitle">Full-Stack Web Developer</h2>
                 <p className="about__text">
-                  Contrary to popular belief, Lorem Ipsum is not simply random
-                  text. It has roots in a piece of classical Latin literature
-                  from 45 BC, making it over 2000 years old. Richard McClintock,
-                  a Latin professor at Hampden-Sydney College in Virginia,
-                  looked up one of the more obscure Latin words, consectetur,
-                  from a Lorem Ipsum passage, and going through the cites of the
-                  word in classical literature, discovered the undoubtable
-                  source.
+                  Hello Stranger. I'm Tatiana, but friends call me Tanya. I am a
+                  full-stack web developer with a passion for design and
+                  aesthetic solutions. 
+                </p>
+
+                <p className="about__text">
+                I am currently based in Vancouver, B.C.
+                  but I've been wandering around the world almost as long as I
+                  can remember myself ("ask me where I'm from, I'll say a
+                  different land"). I am passionate about clean, minimalistic
+                  design and avant-garde ideas. I thrive as a generalist,
+                  focusing on solving the problems using a variety of tools and
+                  technologies. 
+                </p>
+
+                <p className="about__text">
+                I am interested in philosophy and art, I
+                  enjoy good stories, and I’m usually traveling, reading or rewatching The Office in my free time.{" "}
                 </p>
               </div>
 

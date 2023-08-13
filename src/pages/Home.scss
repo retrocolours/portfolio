@@ -9,6 +9,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Aboreto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Babylonica&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Grandiflora+One&display=swap');
 
 :root {
   --background-color: rgb(6, 11, 25);
@@ -59,7 +60,7 @@ span {
   height: 100%;
   border: 1px solid white;
   border-radius: 1.5rem;
-  padding: 30px;
+  padding: 20px;
   overflow: hidden;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   z-index: 1;
@@ -111,16 +112,14 @@ span {
   flex-basis: 35%;
   background: rgba(109, 40, 109, 0.05);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  // backdrop-filter: blur(7.5px);
-  // -webkit-backdrop-filter: blur(7.5px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-end;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   padding-top: 1rem;
   font-family: "GFS Neohellenic", sans-serif;
 
@@ -134,19 +133,30 @@ span {
     margin-left: auto;
     margin-right: auto;
     font-family: "Aboreto", cursive;
+   
+  
+ 
   }
 
   &__logo {
     font-family: "Babylonica", cursive;
-    font-size: 2rem;
+    font-size: 1.5rem;
     border-right: 1px solid rgb(83, 83, 216);
     padding-right: 2rem;
   }
 
   &__title {
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-family: "Babylonica", cursive;
     margin: 0;
+    display: flex;
+    justify-content: center;
+   
+  }
+
+  &__content {
+  padding-right: 1rem;
+  padding-left: 1rem;
   }
 
   &__fun {
@@ -155,21 +165,33 @@ span {
 
   &__subtitle {
     font-size: 1rem;
-    font-family: "Aboreto", cursive;
-    letter-spacing: 0.2rem;
+    // font-family: "Aboreto", cursive;
+margin: 0;
+  text-decoration: underline;
+    letter-spacing: 0.1rem;
+    display: flex;
+    justify-content: center;
   }
 
   &__text {
     font-size: 1rem;
-    line-height: 1rem;
-    word-spacing: 0.1rem;
+    line-height: 1.1rem;
+    
+    
   }
 
   &__about,
-  &__contact {
+  &__contact,
+  &__menu-button {
     background-color: transparent;
     color: white;
+
   }
+
+  // &__about,
+  // &__contact {
+  //   padding-bottom: 3rem;
+  // }
 
   &__menu {
     position: relative;
@@ -183,6 +205,16 @@ span {
       top: 60px;
       left: 0;
       border-radius: 10px;
+    }
+
+    &-button {
+      font-size: 0.7rem;
+      color: rgb(83, 83, 216);
+    }
+ 
+
+    &__social {
+      padding-bottom: 2rem;
     }
   }
 }
