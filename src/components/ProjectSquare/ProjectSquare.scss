@@ -23,7 +23,9 @@
     // align-items: center;
     width: 85%;
     overflow: hidden;
-    height: 500px;
+    border-radius: 1rem;
+    height: 100%;
+    line-height: 0;
     position: relative;
    margin-top: 2rem;
    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -42,32 +44,37 @@
     transition: transform 200ms ease;
     position: absolute;
     left: 0px;
-    top: 0px;
+    top: 50%;
 
+    &:first-child {
+      position: relative;
+    }
+
+    // below is now unused since images now use inline transfrom translte in ProjectSquare component
     &[data-status="inactive"] {
-      transform: translateX(-100%);
+      transform: translateX(-100%, -50%);
       transition: none;
     }
 
     &[data-status="active"] {
-      transform: translateX(0%);
+      transform: translateX(0%, -50%);
       z-index: 9999;
     }
 
     &[data-status="before"] {
-      transform: translateX(-100%);
+      transform: translateX(-100%, -50%);
     }
 
     &[data-status="after"] {
-      transform: translateX(100%);
+      transform: translateX(100%, -50%);
     }
 
     &[data-status="becoming-active-from-before"] {
-      transform: translateX(-100%);
+      transform: translateX(-100%, -50%);
       transition: none;
     }
     &[data-status="becoming-active-from-after"] {
-      transform: translateX(100%);
+      transform: translateX(100%, -50%);
       transition: none;
     }
   }
