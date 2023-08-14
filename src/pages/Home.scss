@@ -52,15 +52,15 @@ span {
 
 .site-container {
   height: 100vh;
-  padding: 30px;
+  padding: 28px;
   min-height: 100vh;
 }
 
 .site-inner-container {
   height: 100%;
-  border: 1px solid white;
+  // border: 1px solid white;
   border-radius: 1.5rem;
-  padding: 25px;
+  padding: 28px;
   overflow: hidden;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   z-index: 1;
@@ -68,6 +68,8 @@ span {
   // background-color: rgba(6, 11, 25, 0.5);
   background-color: var(--background-color);
   // backdrop-filter: blur(7.5px);
+ 
+  border: 1px solid rgba(255, 255, 255, 0.638);
 }
 
 .nav {

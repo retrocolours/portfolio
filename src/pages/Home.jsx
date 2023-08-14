@@ -1,17 +1,12 @@
 import { useState, useEffect } from "react";
 import "./Home.scss";
-import { PiLinkedinLogo } from "react-icons/pi";
-import { VscGithub } from "react-icons/vsc";
-import { PiArrowBendUpLeftDuotone } from "react-icons/pi";
-import { PiArrowBendUpRightDuotone } from "react-icons/pi";
-import { GiSparrow } from "react-icons/gi";
-import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
-
 import Clarity from "../assets/Clarity.png";
+import Clarity2 from "../assets/Clarity2.png";
+import Clarity3 from "../assets/Clarity3.png";
+import Clarity4 from "../assets/Clarity4.png";
 import testtwo from "../assets/testtwo.jpg";
 import testthree from "../assets/testthree.jpg";
 import testfour from "../assets/testfour.jpg";
-import statue from "../assets/statue.png";
 import MovingImage from "../components/MovingImage/MovingImage";
 import ProjectSquare from "../components/ProjectSquare/ProjectSquare";
 
@@ -23,13 +18,13 @@ const groups = [
       image: "1 Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
       imageSrc: [
         {
-          src: testtwo,
+          src: Clarity,
         },
         {
-          src: testthree,
+          src: Clarity2,
         },
         {
-          src: testfour,
+          src: Clarity4,
         },
       ],
     },
