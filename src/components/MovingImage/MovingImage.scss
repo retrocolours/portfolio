@@ -4,13 +4,15 @@
   height: 100%;
   display: flex;
   justify-content: center;
+
   z-index: 1;
 }
 
 .moving-image-container img {
   position: relative;
-  width: 43%;
-  transition: transform 0.5s ease-out;
+  width: 38%;
+  // padding: 0.5rem;
+  transition: transform 0.8s ease-out;
   will-change: transform;
   transform: translate3d(92.323px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg)
     rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);

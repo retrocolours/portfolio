@@ -9,7 +9,8 @@ const MovingImage = ({ xCords, yCords }) => {
         src={statue}
         alt="Moving Statue"
         style={{
-          transform: `translate(${xCords}px, ${yCords}px)`,
+          // transform: `translate(${xCords}px, ${yCords}px)`,
+          transform: `translate(${xCords}px`,
         }}
       />
     </div>
