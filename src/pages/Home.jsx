@@ -1,17 +1,12 @@
 import { useState, useEffect } from "react";
 import "./Home.scss";
-import { PiLinkedinLogo } from "react-icons/pi";
-import { VscGithub } from "react-icons/vsc";
-import { PiArrowBendUpLeftDuotone } from "react-icons/pi";
-import { PiArrowBendUpRightDuotone } from "react-icons/pi";
-import { GiSparrow } from "react-icons/gi";
-import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
-
 import Clarity from "../assets/Clarity.png";
+import Clarity2 from "../assets/Clarity2.png";
+import Clarity3 from "../assets/Clarity3.png";
+import Clarity4 from "../assets/Clarity4.png";
 import testtwo from "../assets/testtwo.jpg";
 import testthree from "../assets/testthree.jpg";
 import testfour from "../assets/testfour.jpg";
-import statue from "../assets/statue.png";
 import MovingImage from "../components/MovingImage/MovingImage";
 import ProjectSquare from "../components/ProjectSquare/ProjectSquare";
 
@@ -21,6 +16,24 @@ const groups = [
     content: {
       description: "Clarity",
       image: "1 Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+      imageSrc: [
+        {
+          src: Clarity,
+        },
+        {
+          src: Clarity2,
+        },
+        {
+          src: Clarity4,
+        },
+      ],
+    },
+  },
+  {
+    index: 1,
+    content: {
+      image: "2 Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+      description: "In Stock",
       imageSrc: [
         {
           src: testtwo,
@@ -35,34 +48,19 @@ const groups = [
     },
   },
   {
-    index: 1,
-    content: {
-      image: "2 Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
-      description: "In Stock",
-      imageSrc: [
-        {
-          src: Clarity,
-        },
-        {
-          src: testtwo,
-        },
-        {
-          src: testthree,
-        },
-      ],
-    },
-  },
-  {
     index: 2,
     content: {
       image: "3 Duis aute irure dolor in reprehenderit in voluptate velit...",
       description: "BrainFlix",
       imageSrc: [
         {
-          src: Clarity,
+          src: testtwo,
         },
         {
-          src: testtwo,
+          src: testthree,
+        },
+        {
+          src: testfour,
         },
       ],
     },
@@ -74,13 +72,13 @@ const groups = [
       description: "Bandsite",
       imageSrc: [
         {
-          src: Clarity,
-        },
-        {
           src: testtwo,
         },
         {
           src: testthree,
+        },
+        {
+          src: testfour,
         },
       ],
     },
@@ -93,13 +91,13 @@ const groups = [
       description: "Industry Project",
       imageSrc: [
         {
-          src: Clarity,
-        },
-        {
           src: testtwo,
         },
         {
           src: testthree,
+        },
+        {
+          src: testfour,
         },
       ],
     },
@@ -112,10 +110,13 @@ const groups = [
       description: "Volunteer Finder",
       imageSrc: [
         {
-          src: Clarity,
+          src: testtwo,
         },
         {
-          src: testtwo,
+          src: testthree,
+        },
+        {
+          src: testfour,
         },
       ],
     },
@@ -184,7 +185,7 @@ function Home() {
             <section className="about">
               <div className="about__nav">
                 <div className="about__logo">
-                  <a href="#">T.</a>
+                  <a className="about__link" href="#">T.</a>
                 </div>
                 <div className="about__menu">
                   <button className="about__menu-button"

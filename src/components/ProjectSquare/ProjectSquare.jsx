@@ -30,24 +30,24 @@ const ProjectSquare = ({ projectData }) => {
       key={projectData.index}
       data-index={projectData.index}
     >
+      
       <div className="article__section--container">
         <div className="article__section-image-container">
           {imageArr.map((image, index) => {
             let style =
               direction === "right" // Use direction to determine default style
-                ? { transform: "translateX(-100%)" }
-                : { transform: "translateX(100%)" };
+                ? { transform: "translate(-100%, -50%)" }
+                : { transform: "translate(100%, -50%)" };
 
             if (index === activeIndex) {
-              style = { transform: "translateX(0%)" }; // Shift to Active
+              style = { transform: "translate(0%, -50%)" }; // Shift to Active
             } else if (
               index === activeIndex - 1 ||
               (activeIndex === 0 && index === imageArr.length - 1)
             ) {
               style = {
-                transform: "translateX(-100%)",
+                transform: "translate(-100%, -50%)",
                 ...(direction === "left" && { transition: "none" }),
-
               }; // Shift Left
             } else if (
               index === activeIndex + 1 ||
@@ -59,7 +59,7 @@ const ProjectSquare = ({ projectData }) => {
               // Additionally if this happened from a SHIFT left button - have a transition
               // if it happened from SHIFT RIGHT button - no transition (teleport)
               style = {
-                transform: "translateX(100%)",
+                transform: "translate(100%, -50%)",
                 ...(direction === "right" && { transition: "none" }),
               }; // Shift Right
             }
