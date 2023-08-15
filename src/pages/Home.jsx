@@ -36,13 +36,13 @@ const groups = [
       description: "In Stock",
       imageSrc: [
         {
-          src: Clarity,
-        },
-        {
           src: testtwo,
         },
         {
           src: testthree,
+        },
+        {
+          src: testfour,
         },
       ],
     },
@@ -54,10 +54,13 @@ const groups = [
       description: "BrainFlix",
       imageSrc: [
         {
-          src: Clarity,
+          src: testtwo,
         },
         {
-          src: testtwo,
+          src: testthree,
+        },
+        {
+          src: testfour,
         },
       ],
     },
@@ -69,13 +72,13 @@ const groups = [
       description: "Bandsite",
       imageSrc: [
         {
-          src: Clarity,
-        },
-        {
           src: testtwo,
         },
         {
           src: testthree,
+        },
+        {
+          src: testfour,
         },
       ],
     },
@@ -88,13 +91,13 @@ const groups = [
       description: "Industry Project",
       imageSrc: [
         {
-          src: Clarity,
-        },
-        {
           src: testtwo,
         },
         {
           src: testthree,
+        },
+        {
+          src: testfour,
         },
       ],
     },
@@ -107,10 +110,13 @@ const groups = [
       description: "Volunteer Finder",
       imageSrc: [
         {
-          src: Clarity,
+          src: testtwo,
         },
         {
-          src: testtwo,
+          src: testthree,
+        },
+        {
+          src: testfour,
         },
       ],
     },
@@ -179,7 +185,7 @@ function Home() {
             <section className="about">
               <div className="about__nav">
                 <div className="about__logo">
-                  <a href="#">T.</a>
+                  <a className="about__link" href="#">T.</a>
                 </div>
                 <div className="about__menu">
                   <button className="about__menu-button"

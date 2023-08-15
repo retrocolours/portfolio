@@ -30,6 +30,7 @@ const ProjectSquare = ({ projectData }) => {
       key={projectData.index}
       data-index={projectData.index}
     >
+      
       <div className="article__section--container">
         <div className="article__section-image-container">
           {imageArr.map((image, index) => {

@@ -9,7 +9,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Aboreto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Babylonica&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Grandiflora+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Grandiflora+One&display=swap");
 
 :root {
   --background-color: rgb(6, 11, 25);
@@ -68,8 +68,8 @@ span {
   // background-color: rgba(6, 11, 25, 0.5);
   background-color: var(--background-color);
   // backdrop-filter: blur(7.5px);
- 
-  border: 1px solid rgba(255, 255, 255, 0.638);
+
+  border: 1px solid rgba(255, 255, 255, 0.524);
 }
 
 .nav {
@@ -129,7 +129,6 @@ span {
   &__nav {
     display: flex;
     flex-direction: row;
-    gap: 1rem;
     max-width: 100%;
     justify-content: space-between;
     align-items: center;
@@ -141,8 +140,12 @@ span {
   &__logo {
     font-family: "Babylonica", cursive;
     font-size: 1.5rem;
-    border-right: 1px solid rgb(83, 83, 216);
+    border-right: 1px solid #9d84ff;
     padding-right: 2rem;
+  }
+
+  &__link {
+    color: #9d84ff;
   }
 
   &__title {
@@ -215,9 +218,9 @@ span {
 
     &-button {
       font-size: 0.7rem;
-      color: rgb(83, 83, 216);
+      color: #9d84ff;
+      padding: 0.8rem 1.5rem;
     }
- 
 
     &__social {
       padding-bottom: 2rem;
@@ -281,7 +284,7 @@ span {
     z-index: 9999;
     position: fixed;
     background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/5c/Image_gaussian_noise_example.png);
-    opacity: 0.4;
+    opacity: 0.2;
     pointer-events: none;
     -webkit-animation: noise 1s steps(2) infinite;
     animation: noise 1s steps(2) infinite;
