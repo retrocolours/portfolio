@@ -2,8 +2,15 @@ import { useState, useEffect } from "react";
 import "./Home.scss";
 import Clarity from "../assets/Clarity.png";
 import Clarity2 from "../assets/Clarity2.png";
-import Clarity3 from "../assets/Clarity3.png";
 import Clarity4 from "../assets/Clarity4.png";
+import Bandsite from "../assets/Bandsite.png";
+import Bandsite2 from "../assets/Bandsite2.png";
+import Bandsite3 from "../assets/Bandsite3.png";
+import Bandsite4 from "../assets/Bandsite4.png";
+import Bandsite5 from "../assets/Bandsite5.png";
+import Bandsite6 from "../assets/Bandsite6.png";
+import BrainFlix from "../assets/BrainFlix.png";
+import BrainFlix2 from "../assets/BrainFlix2.png";
 import testtwo from "../assets/testtwo.jpg";
 import testthree from "../assets/testthree.jpg";
 import testfour from "../assets/testfour.jpg";
@@ -54,10 +61,10 @@ const groups = [
       description: "BrainFlix",
       imageSrc: [
         {
-          src: testtwo,
+          src: BrainFlix,
         },
         {
-          src: testthree,
+          src: BrainFlix2,
         },
         {
           src: testfour,
@@ -72,13 +79,22 @@ const groups = [
       description: "Bandsite",
       imageSrc: [
         {
-          src: testtwo,
+          src: Bandsite,
         },
         {
-          src: testthree,
+          src: Bandsite2,
         },
         {
-          src: testfour,
+          src: Bandsite3,
+        },
+        {
+          src: Bandsite4,
+        },
+        {
+          src: Bandsite5,
+        },
+        {
+          src: Bandsite6,
         },
       ],
     },
@@ -107,7 +123,7 @@ const groups = [
     index: 5,
     content: {
       image: "Excepteur sint occaecat cupidatat non proident...",
-      description: "Volunteer Finder",
+      description: "Volunteer Connect",
       imageSrc: [
         {
           src: testtwo,
