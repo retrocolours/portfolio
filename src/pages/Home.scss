@@ -1,5 +1,6 @@
 @use "../styles/partials/variables" as *;
 @use "../styles/partials/mixin" as *;
+// @use "../styles/partials/font" as *;
 
 // @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
@@ -10,6 +11,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Aboreto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Babylonica&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Grandiflora+One&display=swap");
+
 
 :root {
   --background-color: rgb(6, 11, 25);

@@ -3,17 +3,36 @@ import "./Home.scss";
 import Clarity from "../assets/Clarity.png";
 import Clarity2 from "../assets/Clarity2.png";
 import Clarity4 from "../assets/Clarity4.png";
-import Bandsite from "../assets/Bandsite.png";
+import Claritytest from "../assets/Claritytest.png";
+import Bandsitetest from "../assets/Bandsitetest.png";
 import Bandsite2 from "../assets/Bandsite2.png";
 import Bandsite3 from "../assets/Bandsite3.png";
 import Bandsite4 from "../assets/Bandsite4.png";
 import Bandsite5 from "../assets/Bandsite5.png";
 import Bandsite6 from "../assets/Bandsite6.png";
-import BrainFlix from "../assets/BrainFlix.png";
-import BrainFlix2 from "../assets/BrainFlix2.png";
-import testtwo from "../assets/testtwo.jpg";
-import testthree from "../assets/testthree.jpg";
-import testfour from "../assets/testfour.jpg";
+import Bandsite8 from "../assets/Bandsite8.png";
+import Bandsite9 from "../assets/Bandsite9.png";
+import Bandsite10 from "../assets/Bandsite10.png";
+import BrainFlix3 from "../assets/BrainFlix3.png";
+import BrainFlix4 from "../assets/BrainFlix4.png";
+import BrainFlix5 from "../assets/BrainFlix5.png";
+import Brainflixtest from "../assets/Brainflixtest.png";
+import Instock from "../assets/Instock.png";
+import Instock2 from "../assets/Instock2.png";
+import Instock3 from "../assets/Instock3.png";
+import Instock4 from "../assets/Instock4.png";
+import Instock8 from "../assets/Instock8.png";
+import Instock6 from "../assets/Instock6.png";
+import Instock7 from "../assets/Instock7.png";
+import Volunteer from "../assets/Volunteer.png";
+import Volunteer2 from "../assets/Volunteer2.png";
+import Volunteer3 from "../assets/Volunteer3.png";
+import Volunteer4 from "../assets/Volunteer4.png";
+import Volunteer5 from "../assets/Volunteer5.png";
+import Volunteer6 from "../assets/Volunteer6.png";
+import Volunteer7 from "../assets/Volunteer7.png";
+import Volunteer8 from "../assets/Volunteer8.png";
+import Volunteer9 from "../assets/Volunteer9.png";
 import MovingImage from "../components/MovingImage/MovingImage";
 import ProjectSquare from "../components/ProjectSquare/ProjectSquare";
 
@@ -25,10 +44,10 @@ const groups = [
       image: "1 Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
       imageSrc: [
         {
-          src: Clarity,
+          src: Clarity2,
         },
         {
-          src: Clarity2,
+          src: Claritytest,
         },
         {
           src: Clarity4,
@@ -43,14 +62,26 @@ const groups = [
       description: "In Stock",
       imageSrc: [
         {
-          src: testtwo,
+          src: Instock,
         },
         {
-          src: testthree,
+          src: Instock2,
         },
         {
-          src: testfour,
+          src: Instock3,
         },
+        {
+          src: Instock4,
+        },
+        {
+          src: Instock8,
+        },
+        {
+          src: Instock6,
+        },
+        {
+          src: Instock7,
+        }
       ],
     },
   },
@@ -61,14 +92,17 @@ const groups = [
       description: "BrainFlix",
       imageSrc: [
         {
-          src: BrainFlix,
+          src: Brainflixtest,
         },
         {
-          src: BrainFlix2,
+          src: BrainFlix4,
         },
         {
-          src: testfour,
+          src: BrainFlix3,
         },
+        {
+          src: BrainFlix5,
+        }
       ],
     },
   },
@@ -79,19 +113,19 @@ const groups = [
       description: "Bandsite",
       imageSrc: [
         {
-          src: Bandsite,
+          src: Bandsite10,
         },
         {
-          src: Bandsite2,
+          src: Bandsitetest,
         },
         {
-          src: Bandsite3,
+          src: Bandsite8,
+        },
+        {
+          src: Bandsite9,
         },
         {
           src: Bandsite4,
-        },
-        {
-          src: Bandsite5,
         },
         {
           src: Bandsite6,
@@ -104,39 +138,57 @@ const groups = [
     index: 4,
     content: {
       image: "Excepteur sint occaecat cupidatat non proident...",
-      description: "Industry Project",
+      description: "Volunteer Connect",
       imageSrc: [
         {
-          src: testtwo,
+          src: Volunteer,
         },
         {
-          src: testthree,
+          src: Volunteer2,
         },
         {
-          src: testfour,
+          src: Volunteer3,
+        },
+        {
+          src: Volunteer4,
+        },
+        {
+          src: Volunteer5,
+        },
+        {
+          src: Volunteer6,
+        },
+        {
+          src: Volunteer7,
+        },
+        {
+          src: Volunteer8,
+        },
+        {
+          src: Volunteer9,
         },
       ],
     },
   },
 
-  {
-    index: 5,
-    content: {
-      image: "Excepteur sint occaecat cupidatat non proident...",
-      description: "Volunteer Connect",
-      imageSrc: [
-        {
-          src: testtwo,
-        },
-        {
-          src: testthree,
-        },
-        {
-          src: testfour,
-        },
-      ],
-    },
-  },
+  // {
+  //   index: 5,
+  //   content: {
+  //     image: "Excepteur sint occaecat cupidatat non proident...",
+  //     description: "Volunteer Connect",
+  //     imageSrc: [
+  //       {
+  //         src: testtwo,
+  //       },
+  //       {
+  //         src: testthree,
+  //       },
+  //       {
+  //         src: testfour,
+  //       },
+  //     ],
+  //   },
+  // },
 ];
 
 function Home() {

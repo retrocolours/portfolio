@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Glacial Indifference';
+    src: url('GlacialIndifference-Bold.woff2') format('woff2'),
+        url('GlacialIndifference-Bold.woff') format('woff'),
+        url('GlacialIndifference-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Glacial Indifference';
+    src: url('GlacialIndifference-Regular.woff2') format('woff2'),
+        url('GlacialIndifference-Regular.woff') format('woff'),
+        url('GlacialIndifference-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
