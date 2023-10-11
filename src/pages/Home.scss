@@ -285,12 +285,13 @@ span {
     height: calc(100% + 20rem);
     z-index: 9999;
     position: fixed;
-    background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/5c/Image_gaussian_noise_example.png);
-    opacity: 0.2;
+    // background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/5c/Image_gaussian_noise_example.png);
+    background-image: url(./../assets/grain.png);
+    opacity: 0.25;
     pointer-events: none;
     -webkit-animation: noise 1s steps(2) infinite;
     animation: noise 1s steps(2) infinite;
-    mix-blend-mode: hard-light;
+    // mix-blend-mode: hard-light;
   }
 
   @-webkit-keyframes noise {
