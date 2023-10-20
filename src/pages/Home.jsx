@@ -1,38 +1,36 @@
 import { useState, useEffect } from "react";
 import "./Home.scss";
-import Clarity from "../assets/Clarity.png";
-import Clarity2 from "../assets/Clarity2.png";
-import Clarity4 from "../assets/Clarity4.png";
-import Claritytest from "../assets/Claritytest.png";
-import Bandsitetest from "../assets/Bandsitetest.png";
-import Bandsite2 from "../assets/Bandsite2.png";
-import Bandsite3 from "../assets/Bandsite3.png";
-import Bandsite4 from "../assets/Bandsite4.png";
-import Bandsite5 from "../assets/Bandsite5.png";
-import Bandsite6 from "../assets/Bandsite6.png";
-import Bandsite8 from "../assets/Bandsite8.png";
-import Bandsite9 from "../assets/Bandsite9.png";
-import Bandsite10 from "../assets/Bandsite10.png";
-import BrainFlix3 from "../assets/BrainFlix3.png";
-import BrainFlix4 from "../assets/BrainFlix4.png";
-import BrainFlix5 from "../assets/BrainFlix5.png";
-import Brainflixtest from "../assets/Brainflixtest.png";
-import Instock from "../assets/Instock.png";
-import Instock2 from "../assets/Instock2.png";
-import Instock3 from "../assets/Instock3.png";
-import Instock4 from "../assets/Instock4.png";
-import Instock8 from "../assets/Instock8.png";
-import Instock6 from "../assets/Instock6.png";
-import Instock7 from "../assets/Instock7.png";
-import Volunteer from "../assets/Volunteer.png";
-import Volunteer2 from "../assets/Volunteer2.png";
-import Volunteer3 from "../assets/Volunteer3.png";
-import Volunteer4 from "../assets/Volunteer4.png";
-import Volunteer5 from "../assets/Volunteer5.png";
-import Volunteer6 from "../assets/Volunteer6.png";
-import Volunteer7 from "../assets/Volunteer7.png";
-import Volunteer8 from "../assets/Volunteer8.png";
-import Volunteer9 from "../assets/Volunteer9.png";
+import {
+  Clarity2,
+  Clarity4,
+  Claritytest,
+  Bandsitetest,
+  Bandsite4,
+  Bandsite6,
+  Bandsite8,
+  Bandsite9,
+  Bandsite10,
+  BrainFlix3,
+  BrainFlix4,
+  BrainFlix5,
+  Brainflixtest,
+  Instock,
+  Instock2,
+  Instock3,
+  Instock4,
+  Instock6,
+  Instock7,
+  Instock8,
+  Volunteer,
+  Volunteer2,
+  Volunteer3,
+  Volunteer4,
+  Volunteer5,
+  Volunteer6,
+  Volunteer7,
+  Volunteer8,
+  Volunteer9,
+} from "../assets/index";
 import MovingImage from "../components/MovingImage/MovingImage";
 import ProjectSquare from "../components/ProjectSquare/ProjectSquare";
 
@@ -81,7 +79,7 @@ const groups = [
         },
         {
           src: Instock7,
-        }
+        },
       ],
     },
   },
@@ -102,7 +100,7 @@ const groups = [
         },
         {
           src: BrainFlix5,
-        }
+        },
       ],
     },
   },
@@ -170,25 +168,6 @@ const groups = [
       ],
     },
   },
-
-  // {
-  //   index: 5,
-  //   content: {
-  //     image: "Excepteur sint occaecat cupidatat non proident...",
-  //     description: "Volunteer Connect",
-  //     imageSrc: [
-  //       {
-  //         src: testtwo,
-  //       },
-  //       {
-  //         src: testthree,
-  //       },
-  //       {
-  //         src: testfour,
-  //       },
-  //     ],
-  //   },
-  // },
 ];
 
 function Home() {
@@ -253,10 +232,13 @@ function Home() {
             <section className="about">
               <div className="about__nav">
                 <div className="about__logo">
-                  <a className="about__link" href="#">T.</a>
+                  <a className="about__link" href="#">
+                    T.
+                  </a>
                 </div>
                 <div className="about__menu">
-                  <button className="about__menu-button"
+                  <button
+                    className="about__menu-button"
                     onClick={(e) => {
                       e.stopPropagation();
                       setIsMenuOpen((prev) => !prev);
@@ -282,22 +264,22 @@ function Home() {
                 <p className="about__text">
                   Hello Stranger. I'm Tatiana, but friends call me Tanya. I am a
                   full-stack web developer with a passion for design and
-                  aesthetic solutions. 
+                  aesthetic solutions.
                 </p>
 
                 <p className="about__text">
-                I am currently based in Vancouver, B.C.
-                  but I've been wandering around the world almost as long as I
-                  can remember myself ("ask me where I'm from, I'll say a
-                  different land"). I am passionate about clean, minimalistic
-                  design and avant-garde ideas. I thrive as a generalist,
-                  focusing on solving the problems using a variety of tools and
-                  technologies. 
+                  I am currently based in Vancouver, B.C. but I've been
+                  wandering around the world almost as long as I can remember
+                  myself ("ask me where I'm from, I'll say a different land"). I
+                  am passionate about clean, minimalistic design and avant-garde
+                  ideas. I thrive as a generalist, focusing on solving the
+                  problems using a variety of tools and technologies.
                 </p>
 
                 <p className="about__text">
-                I am interested in philosophy and art, I
-                  enjoy good stories, and I’m usually traveling, reading or rewatching The Office in my free time.{" "}
+                  I am interested in philosophy and art, I enjoy good stories,
+                  and I’m usually traveling, reading or rewatching The Office in
+                  my free time.{" "}
                 </p>
               </div>
 
