@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./Home.scss";
+import { ImFire } from "react-icons/im";
 import {
   Clarity2,
   Clarity4,
@@ -232,10 +234,13 @@ function Home() {
             <section className="about">
               <div className="about__nav">
                 <div className="about__logo">
-                  <a className="about__link" href="#">
+                <Link to="/" title="home">
+                  <div className="about__link">
                     T.
-                  </a>
+                  </div>
+                  </Link>
                 </div>
+                <div className="about__divider"><ImFire size={23}/></div>
                 <div className="about__menu">
                   <button
                     className="about__menu-button"

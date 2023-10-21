@@ -60,17 +60,13 @@ span {
 
 .site-inner-container {
   height: 100%;
-  // border: 1px solid white;
   border-radius: 1.5rem;
   padding: 28px;
   overflow: hidden;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   z-index: 1;
   position: relative;
-  // background-color: rgba(6, 11, 25, 0.5);
   background-color: var(--background-color);
-  // backdrop-filter: blur(7.5px);
-
   border: 1px solid rgba(255, 255, 255, 0.524);
 }
 
@@ -90,12 +86,12 @@ span {
   }
 }
 
-#logo {
-  justify-content: flex-start;
-  font-size: 2rem;
-  // font-family: 'Alex Brush', cursive;
-  font-family: "Great Vibes", cursive;
-}
+// #logo {
+//   justify-content: flex-start;
+//   font-size: 2rem;
+//   // font-family: 'Alex Brush', cursive;
+//   font-family: "Great Vibes", cursive;
+// }
 
 #link {
   gap: 6rem;
@@ -137,17 +133,35 @@ span {
     margin-left: auto;
     margin-right: auto;
     font-family: "Aboreto", cursive;
+
   }
 
   &__logo {
     font-family: "Babylonica", cursive;
     font-size: 1.5rem;
-    border-right: 1px solid #9d84ff;
-    padding-right: 2rem;
+   
+    margin-right: 1rem;
+
+    &:hover {
+      border-radius: 8px;
+      border: 1px solid #535bf2;
+      background-image: url(https://assets-global.website-files.com/6398b11ee9bf53ef62055173/642a4cd50700e3c6f5951cda_space2.gif);
+    background-position: 40%;
+    background-size: cover;
+    }
   }
 
   &__link {
     color: #9d84ff;
+    padding-right: 1rem;
+    padding-left: 0.5rem;
+  }
+
+  &__divider {
+    // border-right: 1px solid #9d84ff;
+    // color: transparent;
+    color: #9d84ff;
+  
   }
 
   &__title {
@@ -190,6 +204,12 @@ span {
   &__menu-button {
     background-color: transparent;
     color: white;
+    &:hover {
+      background-image: url(https://assets-global.website-files.com/6398b11ee9bf53ef62055173/642a4cd50700e3c6f5951cda_space2.gif);
+      background-position: 40%;
+      background-size: cover;
+      // border: #9d84ff 1px solid;
+      }
   }
 
   &__social {
@@ -199,13 +219,10 @@ span {
     z-index: 1;
   }
 
-  // &__about,
-  // &__contact {
-  //   padding-bottom: 3rem;
-  // }
-
   &__menu {
     position: relative;
+    margin-left: 0.5rem;
+
 
     &-container {
       display: flex;
@@ -336,15 +353,3 @@ span {
     }
   }
 }
-
-// .test {
-//   background-image: url(https://i.stack.imgur.com/sIIwU.gif);
-//    height:100vh;
-//    opacity: 0.10;
-//    position: absolute;
-//    top: 0;
-//    left: 0;
-//    right: 0;
-//    bottom: 0;
-
-// }
