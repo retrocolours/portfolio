@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import "./Home.scss";
+import { gsap } from "gsap";
 import { ImFire } from "react-icons/im";
 import {
   Clarity2,
@@ -184,6 +185,8 @@ function Home() {
     setImagePosition({ x: targetX, y: targetY });
   };
 
+  const containerRef = useRef(null);
+
   useEffect(() => {
     document.addEventListener("click", handleOutsideClick);
 
@@ -197,12 +200,33 @@ function Home() {
     setIsMenuOpen(false);
   };
 
+  useEffect(() => {
+    const container = containerRef.current;
+
+    if (container) {
+      gsap.set(container, { opacity: 0 }); // Set initial opacity to 0
+      container.style.willChange = "opacity"; // Optimize for animation
+
+      gsap.to(container, {
+        duration: 4, // Adjust duration 
+        opacity: 1,
+        ease: "power3.inOut", // Adjust the easing function for smoother animation
+        onComplete: () => {
+          container.style.willChange = "auto"; 
+        },
+      });
+    }
+  }, []);
+
+
   return (
     <>
+    
       <div className="grain"></div>
       <div className="site-container" onMouseMove={handleMouseMove}>
         <div className="test"></div>
-        <div className="site-inner-container">
+
+        <div className="site-inner-container" ref={containerRef}>
           {/* <nav className="nav">
             <div id="logo" className="nav__section">
               <a href="#">T.</a>
@@ -306,6 +330,7 @@ function Home() {
           </main>
         </div>
       </div>
+
     </>
   );
 }
