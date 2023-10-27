@@ -36,6 +36,7 @@ import {
 } from "../assets/index";
 import MovingImage from "../components/MovingImage/MovingImage";
 import ProjectSquare from "../components/ProjectSquare/ProjectSquare";
+import Counter from "../components/Counter/Counter";
 
 const groups = [
   {
@@ -223,9 +224,9 @@ function Home() {
     <>
     
       <div className="grain"></div>
+      <Counter />
       <div className="site-container" onMouseMove={handleMouseMove}>
         <div className="test"></div>
-
         <div className="site-inner-container" ref={containerRef}>
           {/* <nav className="nav">
             <div id="logo" className="nav__section">
