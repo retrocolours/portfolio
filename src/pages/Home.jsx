@@ -206,16 +206,16 @@ function Home() {
 
     if (container) {
       gsap.set(container, { opacity: 0 }); // Set initial opacity to 0
-      container.style.willChange = "opacity"; // Optimize for animation
+      // container.style.willChange = "opacity"; // Optimize for animation
 
-      gsap.to(container, {
-        duration: 4, // Adjust duration 
-        opacity: 1,
-        ease: "power3.inOut", // Adjust the easing function for smoother animation
-        onComplete: () => {
-          container.style.willChange = "auto"; 
-        },
-      });
+      // gsap.to(container, {
+      //   duration: 4, // Adjust duration 
+      //   opacity: 1,
+      //   ease: "power3.inOut", // Adjust the easing function for smoother animation
+      //   onComplete: () => {
+      //     container.style.willChange = "auto"; 
+      //   },
+      // });
     }
   }, []);
 
@@ -224,37 +224,10 @@ function Home() {
     <>
     
       <div className="grain"></div>
-      <Counter />
+      <Counter container={containerRef} />
       <div className="site-container" onMouseMove={handleMouseMove}>
         <div className="test"></div>
         <div className="site-inner-container" ref={containerRef}>
-          {/* <nav className="nav">
-            <div id="logo" className="nav__section">
-              <a href="#">T.</a>
-            </div>
-
-            <div id="link" className="nav__section">
-              <a href="#">About</a>
-              <a href="#">Work</a>
-              <a href="#">CV</a>
-            </div>
-
-            <div id="social" className="nav__section">
-              <a href="#">
-                <VscGithub size={21} />
-              </a>
-              <a href="#">
-                <PiLinkedinLogo size={24} />
-              </a>
-            </div>
-            <div id="contact" className="nav__section">
-              <a href="#">Get in Touch</a>
-            </div>
-            <div id="menu" className="nav__section">
-              <a href="#">Menu</a>
-            </div>
-          </nav> */}
-
           <main className="main">
             <section className="about">
               <div className="about__nav">

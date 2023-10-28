@@ -1,43 +1,34 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import "./Counter.scss";
 
-const Counter = () => {
-    useEffect(() => {
-      const startLoader = () => {
-        let counterElement = document.querySelector('.counter');
-        let currentValue = 0;
-  
-        const updateCounter = () => {
-          if (currentValue === 100) {
-            return;
-          }
-  
-          currentValue += Math.floor(Math.random() * 10) + 1;
-  
-          if (currentValue > 100) {
-            currentValue = 100;
-          }
-  
-          counterElement.textContent = currentValue;
-  
-          let delay = Math.floor(Math.random() * 200) + 50;
-          setTimeout(updateCounter, delay);
-        };
-  
-        updateCounter();
-      };
-  
-      startLoader();
-  
-      gsap.to('.counter', 0.25, {
-        delay: 3.5,
+const Counter = ({ container }) => {
+  const [currentValue, setCurrentValue] = useState(0);
+  useEffect(() => {
+    if (currentValue >= 100) {
+      setCurrentValue(100); // fade counter out
+      gsap.to(".counter", {
         opacity: 0,
+        duration: 2,
       });
-    }, []);
-  
-    return <h1 className="counter">0</h1>;
-  };
 
- 
+      gsap.to(container.current, {
+        duration: 2, // Adjust duration
+        opacity: 1,
+        // delay: 0.5, 
+        ease: "power3.inOut", // Adjust the easing function for smoother animation
+        onComplete: () => {
+          gsap.set(".counter", { display: "none" });
+        },
+      });
+      return;
+    }
+    let delay = Math.floor(Math.random() * 200) + 50;
+    setTimeout(() => {
+      setCurrentValue((prev) => prev + Math.floor(Math.random() * 10) + 1);
+    }, delay);
+  }, [currentValue, container]);
+  return <h1 className="counter">{currentValue}%</h1>;
+};
+
 export default Counter;
