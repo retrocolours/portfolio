@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import "./Home.scss";
 import { gsap } from "gsap";
-import { ImFire } from "react-icons/im";
+
 import {
   Clarity2,
   Clarity4,
@@ -238,7 +238,7 @@ function Home() {
                   </div>
                   </Link>
                 </div>
-                <div className="about__divider"><ImFire size={23}/></div>
+                
                 <div className="about__menu">
                   <button
                     className="about__menu-button"

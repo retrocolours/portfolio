@@ -138,17 +138,12 @@ span {
 
   &__logo {
     font-family: "Babylonica", cursive;
-    font-size: 1.5rem;
-   
-    margin-right: 1rem;
+    font-size: 1.6rem;
+   border-right: 1px solid #9d84ff;
+padding-right: 2rem;
+margin-right: 1rem;
 
-    &:hover {
-      border-radius: 8px;
-      border: 1px solid #535bf2;
-      background-image: url(https://assets-global.website-files.com/6398b11ee9bf53ef62055173/642a4cd50700e3c6f5951cda_space2.gif);
-    background-position: 40%;
-    background-size: cover;
-    }
+    
   }
 
   &__link {
@@ -221,7 +216,7 @@ span {
 
   &__menu {
     position: relative;
-    margin-left: 0.5rem;
+  
 
 
     &-container {
