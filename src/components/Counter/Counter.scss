@@ -1,0 +1,14 @@
+.counter {
+    margin: 0;
+    padding: 0.2em 0.4em;
+    position: fixed; 
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10rem; 
+    color: #646cff;
+    z-index: 10000;
+    font-family: "Carpenter";
+  }

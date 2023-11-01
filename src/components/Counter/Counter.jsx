@@ -1,38 +1,34 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useState } from "react";
 import { gsap } from "gsap";
+import "./Counter.scss";
 
-const Counter = ({ onCounterComplete }) => {
-  const counterRef = useRef(null);
-
+const Counter = ({ container }) => {
+  const [currentValue, setCurrentValue] = useState(0);
   useEffect(() => {
-    const counter = counterRef.current;
+    if (currentValue >= 100) {
+      setCurrentValue(100); // fade counter out
+      gsap.to(".counter", {
+        opacity: 0,
+        duration: 2,
+      });
 
-    if (counter) {
-      gsap.fromTo(
-        counter,
-        {
-          count: 0,
+      gsap.to(container.current, {
+        duration: 2, // Adjust duration
+        opacity: 1,
+        // delay: 0.5, 
+        ease: "power3.inOut", // Adjust the easing function for smoother animation
+        onComplete: () => {
+          gsap.set(".counter", { display: "none" });
         },
-        {
-          duration: 3,
-          count: 100,
-          roundProps: "count",
-          onUpdate: () => {
-            counter.querySelector("h1").textContent = counter.count; // Update the counter value
-          },
-          onComplete: () => {
-            onCounterComplete(); // Callback to notify the completion of the counter animation
-          },
-        }
-      );
+      });
+      return;
     }
-  }, [onCounterComplete]);
-
-  return (
-    <div className="counter" ref={counterRef}>
-      <h1 ref={counterRef}>0</h1>
-    </div>
-  );
+    let delay = Math.floor(Math.random() * 200) + 50;
+    setTimeout(() => {
+      setCurrentValue((prev) => prev + Math.floor(Math.random() * 10) + 1);
+    }, delay);
+  }, [currentValue, container]);
+  return <h1 className="counter">{currentValue}%</h1>;
 };
 
 export default Counter;
