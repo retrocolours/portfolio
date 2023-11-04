@@ -34,6 +34,7 @@ import {
   Volunteer8,
   Volunteer9,
 } from "../assets/index";
+// import Instock_clear from "../assets/images/alternative images/Instock_clear.png";
 import MovingImage from "../components/MovingImage/MovingImage";
 import ProjectSquare from "../components/ProjectSquare/ProjectSquare";
 import Counter from "../components/Counter/Counter";
@@ -63,6 +64,9 @@ const groups = [
       image: "2 Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
       description: "In Stock",
       imageSrc: [
+        // {
+        //   src: Instock_clear,
+        // },
         {
           src: Instock,
         },
@@ -205,17 +209,7 @@ function Home() {
     const container = containerRef.current;
 
     if (container) {
-      gsap.set(container, { opacity: 0 }); // Set initial opacity to 0
-      // container.style.willChange = "opacity"; // Optimize for animation
-
-      // gsap.to(container, {
-      //   duration: 4, // Adjust duration 
-      //   opacity: 1,
-      //   ease: "power3.inOut", // Adjust the easing function for smoother animation
-      //   onComplete: () => {
-      //     container.style.willChange = "auto"; 
-      //   },
-      // });
+      gsap.set(container, { opacity: 0 }); 
     }
   }, []);
 

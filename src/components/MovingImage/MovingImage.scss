@@ -1,14 +1,23 @@
+
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixin" as *;
+
+
+
 .moving-image-container {
+display: none;
+  @include tablet {
   position: relative;
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
-
   z-index: 1;
+  }
 }
 
 .moving-image-container img {
+
   position: relative;
   width: 38%;
   // padding: 0.5rem;
@@ -21,4 +30,5 @@
   opacity: 0.9;
   mix-blend-mode: normal;
   align-self: center;
+
 }
