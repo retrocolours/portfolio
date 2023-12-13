@@ -7,16 +7,19 @@ import {
   Clarity2,
   Clarity4,
   Claritytest,
+  Clarityclear,
   Bandsitetest,
   Bandsite4,
   Bandsite6,
   Bandsite8,
   Bandsite9,
   Bandsite10,
+  Bandsiteclear,
   BrainFlix3,
   BrainFlix4,
   BrainFlix5,
   Brainflixtest,
+  BrainFlixclear,
   Instock,
   Instock2,
   Instock3,
@@ -24,6 +27,7 @@ import {
   Instock6,
   Instock7,
   Instock8,
+  Instockclear,
   Volunteer,
   Volunteer2,
   Volunteer3,
@@ -33,6 +37,7 @@ import {
   Volunteer7,
   Volunteer8,
   Volunteer9,
+  Volunteerclear,
 } from "../assets/index";
 // import Instock_clear from "../assets/images/alternative images/Instock_clear.png";
 import MovingImage from "../components/MovingImage/MovingImage";
@@ -47,7 +52,7 @@ const groups = [
       image: "1 Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
       imageSrc: [
         {
-          src: Clarity2,
+          src: Clarityclear,
         },
         {
           src: Claritytest,
@@ -68,7 +73,7 @@ const groups = [
         //   src: Instock_clear,
         // },
         {
-          src: Instock,
+          src: Instockclear,
         },
         {
           src: Instock2,
@@ -98,7 +103,7 @@ const groups = [
       description: "BrainFlix",
       imageSrc: [
         {
-          src: Brainflixtest,
+          src: BrainFlixclear,
         },
         {
           src: BrainFlix4,
@@ -119,7 +124,7 @@ const groups = [
       description: "Bandsite",
       imageSrc: [
         {
-          src: Bandsite10,
+          src: Bandsiteclear,
         },
         {
           src: Bandsitetest,
@@ -147,7 +152,7 @@ const groups = [
       description: "Volunteer Connect",
       imageSrc: [
         {
-          src: Volunteer,
+          src: Volunteerclear,
         },
         {
           src: Volunteer2,
