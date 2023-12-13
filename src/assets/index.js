@@ -1,6 +1,7 @@
 // Assuming all these images are located directly in the "images" directory
 
 export { default as Clarity2 } from './images/Clarity2.png';
+export { default as Clarityclear } from './images/Clarityclear.png';
 export { default as Clarity4 } from './images/Clarity4.png';
 export { default as Claritytest } from './images/Claritytest.png';
 export { default as Bandsitetest } from './images/Bandsitetest.png';
@@ -9,9 +10,11 @@ export { default as Bandsite6 } from './images/Bandsite6.png';
 export { default as Bandsite8 } from './images/Bandsite8.png';
 export { default as Bandsite9 } from './images/Bandsite9.png';
 export { default as Bandsite10 } from './images/Bandsite10.png';
+export { default as Bandsiteclear } from './images/Bandsiteclear.png';
 export { default as BrainFlix3 } from './images/BrainFlix3.png';
 export { default as BrainFlix4 } from './images/BrainFlix4.png';
 export { default as BrainFlix5 } from './images/BrainFlix5.png';
+export { default as BrainFlixclear } from './images/BrainFlixclear.png';
 export { default as Brainflixtest } from './images/Brainflixtest.png';
 export { default as Instock } from './images/Instock.png';
 export { default as Instock2 } from './images/Instock2.png';
@@ -20,6 +23,7 @@ export { default as Instock4 } from './images/Instock4.png';
 export { default as Instock6 } from './images/Instock6.png';
 export { default as Instock7 } from './images/Instock7.png';
 export { default as Instock8 } from './images/Instock8.png';
+export { default as Instockclear } from './images/Instockclear.png';
 export { default as Volunteer } from './images/Volunteer.png';
 export { default as Volunteer2 } from './images/Volunteer2.png';
 export { default as Volunteer3 } from './images/Volunteer3.png';
@@ -29,3 +33,4 @@ export { default as Volunteer6 } from './images/Volunteer6.png';
 export { default as Volunteer7 } from './images/Volunteer7.png';
 export { default as Volunteer8 } from './images/Volunteer8.png';
 export { default as Volunteer9 } from './images/Volunteer9.png';
+export { default as Volunteerclear } from './images/Volunteerclear.png';
