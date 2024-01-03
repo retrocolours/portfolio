@@ -1,1 +1,4 @@
-Please note that this Vaporwave style inspired portfolio is currently under construction :) I am working on a loading animation using GreenSock at the moment. Feel free to check it out from the main or the landing-page-reveal branch!
+Please contact me for the access to this repo:
+severny.island@gmail.com :) 
+
+there's a lot of cool things to see, I promise!
