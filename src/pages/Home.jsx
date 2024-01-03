@@ -8,17 +8,19 @@ import {
   Clarity4,
   Claritytest,
   Clarityclear,
-  Bandsitetest,
+  Bandsite1,
+  Bandsite2,
+  Bandsite3,
   Bandsite4,
+  Bandsite5,
   Bandsite6,
-  Bandsite8,
-  Bandsite9,
-  Bandsite10,
   Bandsiteclear,
+  BrainFlix1,
+  BrainFlix2,
   BrainFlix3,
   BrainFlix4,
   BrainFlix5,
-  Brainflixtest,
+  BrainFlix6,
   BrainFlixclear,
   Instock,
   Instock2,
@@ -69,9 +71,6 @@ const groups = [
       image: "2 Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
       description: "In Stock",
       imageSrc: [
-        // {
-        //   src: Instock_clear,
-        // },
         {
           src: Instockclear,
         },
@@ -106,13 +105,22 @@ const groups = [
           src: BrainFlixclear,
         },
         {
-          src: BrainFlix4,
+          src: BrainFlix1,
+        },
+        {
+          src: BrainFlix2,
         },
         {
           src: BrainFlix3,
         },
         {
+          src: BrainFlix4,
+        },
+        {
           src: BrainFlix5,
+        },
+        {
+          src: BrainFlix6,
         },
       ],
     },
@@ -127,16 +135,19 @@ const groups = [
           src: Bandsiteclear,
         },
         {
-          src: Bandsitetest,
+          src: Bandsite1,
         },
         {
-          src: Bandsite8,
+          src: Bandsite2,
         },
         {
-          src: Bandsite9,
+          src: Bandsite3,
         },
         {
           src: Bandsite4,
+        },
+        {
+          src: Bandsite5,
         },
         {
           src: Bandsite6,
@@ -214,14 +225,12 @@ function Home() {
     const container = containerRef.current;
 
     if (container) {
-      gsap.set(container, { opacity: 0 }); 
+      gsap.set(container, { opacity: 0 });
     }
   }, []);
 
-
   return (
     <>
-    
       <div className="grain"></div>
       <Counter container={containerRef} />
       <div className="site-container" onMouseMove={handleMouseMove}>
@@ -231,13 +240,11 @@ function Home() {
             <section className="about">
               <div className="about__nav">
                 <div className="about__logo">
-                <Link to="/" title="home">
-                  <div className="about__link">
-                    T.
-                  </div>
+                  <Link to="/" title="home">
+                    <div className="about__link">T.</div>
                   </Link>
                 </div>
-                
+
                 <div className="about__menu">
                   <button
                     className="about__menu-button"
@@ -303,7 +310,6 @@ function Home() {
           </main>
         </div>
       </div>
-
     </>
   );
 }
