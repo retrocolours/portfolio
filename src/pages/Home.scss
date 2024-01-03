@@ -11,6 +11,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Aboreto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Babylonica&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Grandiflora+One&display=swap");
+//add fonts properly later 
 
 :root {
   --background-color: rgb(6, 11, 25);
@@ -194,7 +195,6 @@ span {
   &__text {
     font-size: 1rem;
     line-height: 1.1rem;
-
 
     @include desktop {
       font-size: 1vw;

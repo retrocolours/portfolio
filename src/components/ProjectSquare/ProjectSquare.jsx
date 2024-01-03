@@ -77,6 +77,9 @@ const ProjectSquare = ({ projectData }) => {
           <h3 className="article__section article__section--title">
             {projectData.content.description}
           </h3>
+          <p className="article__section article__section--technologies">
+            {projectData.content.technologies}
+            </p>
           <div className="article__section article__section--nav">
             <button
               className="article__button article__button--left"

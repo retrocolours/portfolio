@@ -4,9 +4,9 @@ import "./Home.scss";
 import { gsap } from "gsap";
 
 import {
+  Clarity1,
   Clarity2,
-  Clarity4,
-  Claritytest,
+  Clarity3,
   Clarityclear,
   Bandsite1,
   Bandsite2,
@@ -22,45 +22,44 @@ import {
   BrainFlix5,
   BrainFlix6,
   BrainFlixclear,
-  Instock,
+  Instock1,
   Instock2,
   Instock3,
   Instock4,
+  Instock5,
   Instock6,
   Instock7,
-  Instock8,
   Instockclear,
-  Volunteer,
+  Volunteer1,
   Volunteer2,
   Volunteer3,
-  Volunteer4,
-  Volunteer5,
-  Volunteer6,
-  Volunteer7,
-  Volunteer8,
-  Volunteer9,
   Volunteerclear,
 } from "../assets/index";
 // import Instock_clear from "../assets/images/alternative images/Instock_clear.png";
 import MovingImage from "../components/MovingImage/MovingImage";
 import ProjectSquare from "../components/ProjectSquare/ProjectSquare";
 import Counter from "../components/Counter/Counter";
+import DownloadResume from "../components/DownloadResume/DownloadResume";
 
 const groups = [
   {
     index: 0,
     content: {
       description: "Clarity",
+      technologies: "React, Express, Chart.js., SCSS, BEM, JSON, Postman",
       image: "1 Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
       imageSrc: [
         {
           src: Clarityclear,
         },
         {
-          src: Claritytest,
+          src: Clarity1,
         },
         {
-          src: Clarity4,
+          src: Clarity2,
+        },
+        {
+          src: Clarity3,
         },
       ],
     },
@@ -70,9 +69,13 @@ const groups = [
     content: {
       image: "2 Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
       description: "In Stock",
+      technologies: "React, Express, MySQL, Knex, BEM, SCSS, Postman, npm packages",
       imageSrc: [
         {
           src: Instockclear,
+        },
+        {
+          src: Instock1,
         },
         {
           src: Instock2,
@@ -84,7 +87,7 @@ const groups = [
           src: Instock4,
         },
         {
-          src: Instock8,
+          src: Instock5,
         },
         {
           src: Instock6,
@@ -100,6 +103,7 @@ const groups = [
     content: {
       image: "3 Duis aute irure dolor in reprehenderit in voluptate velit...",
       description: "BrainFlix",
+      technologies: "React, Node, Express, BEM, Rest API, Postman, SCSS, npm packages",
       imageSrc: [
         {
           src: BrainFlixclear,
@@ -130,6 +134,7 @@ const groups = [
     content: {
       image: "Excepteur sint occaecat cupidatat non proident...",
       description: "Bandsite",
+      technologies: "JavaScript, SCSS, REST API, CSS, Postman",
       imageSrc: [
         {
           src: Bandsiteclear,
@@ -161,33 +166,19 @@ const groups = [
     content: {
       image: "Excepteur sint occaecat cupidatat non proident...",
       description: "Volunteer Connect",
+      technologies: "Figma, UX/UI design, Adobe Photoshop",
       imageSrc: [
         {
           src: Volunteerclear,
+        },
+        {
+          src: Volunteer1,
         },
         {
           src: Volunteer2,
         },
         {
           src: Volunteer3,
-        },
-        {
-          src: Volunteer4,
-        },
-        {
-          src: Volunteer5,
-        },
-        {
-          src: Volunteer6,
-        },
-        {
-          src: Volunteer7,
-        },
-        {
-          src: Volunteer8,
-        },
-        {
-          src: Volunteer9,
         },
       ],
     },
@@ -258,7 +249,9 @@ function Home() {
                   </button>
                   {isMenuOpen && (
                     <div className="about__menu-container">
-                      Menu Placeholder
+                      <div className="about__menu-item">
+                      <DownloadResume />
+                        </div>
                     </div>
                   )}
                 </div>
@@ -286,8 +279,8 @@ function Home() {
                 </p>
 
                 <p className="about__text">
-                  I am interested in philosophy and art, I enjoy good stories,
-                  and I’m usually traveling, reading or rewatching The Office in
+                  I am interested in philosophy and art, I enjoy good stories, I collect rare and niche perfumes,
+                  and I’m usually traveling, reading or rewatching The Office and Fleabag in
                   my free time.{" "}
                 </p>
               </div>

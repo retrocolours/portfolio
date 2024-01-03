@@ -125,8 +125,13 @@
     letter-spacing: 0.1rem;
     margin-left: 2.7rem;
     padding: 0;
-    color: rgb(224, 227, 228);
+    color: rgb(184, 232, 248);
     //   border-top: 1px solid white;
+  }
+
+  &__section--technologies {
+    color: rgb(224, 227, 228);
+    font-size: 0.9rem;
   }
 
   &__button {
