@@ -272,15 +272,15 @@ function Home() {
                 <p className="about__text">
                   I am currently based in Vancouver, B.C. but I've been
                   wandering around the world almost as long as I can remember
-                  myself ("ask me where I'm from, I'll say a different land"). I
+                  myself and I quite often find myself in very different parts of the world. I
                   am passionate about clean, minimalistic design and avant-garde
                   ideas. I thrive as a generalist, focusing on solving the
                   problems using a variety of tools and technologies.
                 </p>
 
                 <p className="about__text">
-                  I am interested in philosophy and art, I enjoy good stories, I collect rare and niche perfumes,
-                  and I’m usually traveling, reading or rewatching The Office and Fleabag in
+                  I am interested in philosophy and art, I enjoy good stories,
+                  and I’m usually traveling, reading or rewatching The Office in
                   my free time.{" "}
                 </p>
               </div>
