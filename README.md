@@ -1,4 +1,1 @@
-Please contact me to get the access to this repo:
-severny.island@gmail.com :) 
-
-there's a lot of cool things to see, I promise!
+This portfolio is currently in progress. I am working on individual pages for my projects and the buttons!
