@@ -1,1 +1,1 @@
-Please note that this Vaporwave style inspired portfolio is currently under construction :) I am working on a loading animation using GreenSock at the moment. Feel free to check it out from the main or the landing-page-reveal branch!
+This portfolio is currently in progress. I am working on individual pages for my projects and the buttons!
