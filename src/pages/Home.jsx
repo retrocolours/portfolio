@@ -265,7 +265,7 @@ function Home() {
                 <h2 className="about__subtitle">Full-Stack Web Developer</h2>
                 <p className="about__text">
                   Hello Stranger. I'm Tatiana, but friends call me Tanya. I am a
-                  full-stack web developer with a passion for design and
+                  front-end web developer with a passion for design and
                   aesthetic solutions.
                 </p>
 
