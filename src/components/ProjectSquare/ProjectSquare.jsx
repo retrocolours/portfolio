@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./ProjectSquare.scss";
 import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 const ProjectSquare = ({ projectData }) => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -24,13 +25,29 @@ const ProjectSquare = ({ projectData }) => {
 
   if (!imageArr.length) return "empty imageArr state";
 
+  // Define external URLs for each project based on its index
+  const projectExternalUrls = {
+    0: "https://clarityproject.netlify.app",
+    1: "",
+    2: "",
+    3: "https://bandsiteproject.netlify.app"
+  
+  };
+
+  // Function to handle redirection
+  const redirectToProject = () => {
+    const projectUrl = projectExternalUrls[projectData.index];
+    if (projectUrl) {
+      window.location.href = projectUrl;
+    }
+  };
+
   return (
     <article
       className="article"
       key={projectData.index}
       data-index={projectData.index}
     >
-      
       <div className="article__section--container">
         <div className="article__section-image-container">
           {imageArr.map((image, index) => {
@@ -74,12 +91,17 @@ const ProjectSquare = ({ projectData }) => {
           })}
         </div>
         <div className="article__section article__section_bottom">
-          <h3 className="article__section article__section--title">
+          <Link
+            to="#"
+            onClick={redirectToProject}
+            className="article__section article__section--title"
+          >
             {projectData.content.description}
-          </h3>
+          </Link>
+
           <p className="article__section article__section--technologies">
             {projectData.content.technologies}
-            </p>
+          </p>
           <div className="article__section article__section--nav">
             <button
               className="article__button article__button--left"
