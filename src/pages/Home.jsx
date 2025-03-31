@@ -262,10 +262,10 @@ function Home() {
                   <span className="about__fun">v</span>ezen
                   <span className="about__fun">t</span>seva
                 </h1>
-                <h2 className="about__subtitle">Front-End Web Developer</h2>
+                <h2 className="about__subtitle">Full-Stack Software Developer</h2>
                 <p className="about__text">
                   Hello Stranger. I'm Tatiana, but friends call me Tanya. I am a
-                  front-end web developer with a passion for design and
+                  Full-Stack Software with a passion for design and
                   aesthetic solutions.
                 </p>
 
