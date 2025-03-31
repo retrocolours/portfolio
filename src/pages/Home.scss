@@ -11,7 +11,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Aboreto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Babylonica&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Grandiflora+One&display=swap");
-//add fonts properly later 
+@import url('https://fonts.googleapis.com/css2?family=Alice&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap');
 
 :root {
   --background-color: rgb(6, 11, 25);
@@ -48,13 +49,14 @@ a {
   -webkit-tap-highlight-color: transparent !important;
 }
 
-h1,
-h2,
-h3,
-p,
-span {
-  color: white;
-}
+// h1,
+// h2,
+// h3,
+// p,
+// span {
+//   color: white;
+//   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+// }
 
 .site-container {
   height: 100vh;
@@ -83,6 +85,7 @@ span {
   width: 100%;
   border-bottom: 1px solid var(--border-color);
   flex-direction: row;
+
 
   &__section {
     padding: 3rem 2rem;
@@ -135,7 +138,11 @@ span {
   padding-right: 2rem;
   padding-top: 1rem;
   position: relative;
-  font-family: "GFS Neohellenic", sans-serif;
+  font-family: "Sogo", serif;
+color: white;
+
+
+
 
   &__nav {
     display: flex;
@@ -176,6 +183,7 @@ span {
     align-items: Center;
     padding-right: 1rem;
     padding-left: 1rem;
+
   }
 
   &__fun {
@@ -184,22 +192,26 @@ span {
 
   &__subtitle {
     font-size: 1rem;
-    // font-family: "Aboreto", cursive;
+    font-family: "Aboreto", cursive;
     margin: 0;
-    text-decoration: underline;
+    // text-decoration: underline;
     letter-spacing: 0.1rem;
     display: flex;
     justify-content: center;
+    color: #2accf2;
   }
 
   &__text {
-    font-size: 1rem;
-    line-height: 1.1rem;
+    font-size: 0.9rem;
+  line-height: 1.1rem;
+  color: gainsboro;
+  
 
-    @include desktop {
-      font-size: 1vw;
-      line-height: 1vw;
-    }
+
+    // @include desktop {
+    //   font-size: 1vw;
+    //   line-height: 1vw;
+    // }
   }
 
   // &__about,

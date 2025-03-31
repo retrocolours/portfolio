@@ -264,14 +264,14 @@ function Home() {
                 </h1>
                 <h2 className="about__subtitle">Full-Stack Software Developer</h2>
                 <p className="about__text">
-                  Hello Stranger. I'm Tatiana, but friends call me Tanya. I am a
-                  Full-Stack Software with a passion for design and
+                  Hello! I'm Tatiana, my friends call me Tanya. I am a
+                  Full-Stack Software Developer with a passion for design and
                   aesthetic solutions.
                 </p>
 
                 <p className="about__text">
                   I am currently based in Vancouver, B.C. but I've been
-                  wandering around the world almost as long as I can remember
+                  wandering around the globe almost as long as I can remember
                   myself and I quite often find myself in very different parts of the world. I
                   am passionate about clean, minimalistic design and avant-garde
                   ideas. I thrive as a generalist, focusing on solving the
